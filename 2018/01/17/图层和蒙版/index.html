@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>PS-图层和蒙版 | Shanruo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Shanruo,Shanruo's Blog">
+  
+  <meta name="description" content="蒙版概念及应用   魔棒等工具抠图时，对图是存在损伤的，操作是不可持续的。如按住delete键删除了图片相关部分时，当需要修改时，需要退回去重新做。蒙版的好处是并没有把内容真删除掉，只是遮挡起来而已。 新增蒙版切换前景色背景色快捷键：【X】，复位初始值为【D】 利用蒙版可反复修改蒙版中，黑色为透明，白色为不透明，灰色为半透明。 修改时主要用到画笔工具，画笔硬度越大，边缘羽化越小。   利用蒙版对">
+<meta name="keywords" content="Photoshop学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PS-图层和蒙版">
+<meta property="og:url" content="http://shanruopeng.github.io/shanruopeng.github.io/2018/01/17/图层和蒙版/index.html">
+<meta property="og:site_name" content="Shanruo&#39;s Blog">
+<meta property="og:description" content="蒙版概念及应用   魔棒等工具抠图时，对图是存在损伤的，操作是不可持续的。如按住delete键删除了图片相关部分时，当需要修改时，需要退回去重新做。蒙版的好处是并没有把内容真删除掉，只是遮挡起来而已。 新增蒙版切换前景色背景色快捷键：【X】，复位初始值为【D】 利用蒙版可反复修改蒙版中，黑色为透明，白色为不透明，灰色为半透明。 修改时主要用到画笔工具，画笔硬度越大，边缘羽化越小。   利用蒙版对">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:image" content="http://static.zybuluo.com/meggie/1ppm39hkqxzc2t2c4epl0v0d/image_1c3in5upa12c1phm6rmb6j1v1nm.png">
+<meta property="og:image" content="http://static.zybuluo.com/meggie/ytvdccfn9y47twb5so2ad0d0/image_1c3ip3ll31sccv5j1iaun5h1dv19.png">
+<meta property="og:image" content="http://static.zybuluo.com/meggie/53n9p434el77a8ijabl11qfd/image_1c3ipc1hk1lj91mc8aeq1ks4j59m.png">
+<meta property="og:image" content="http://static.zybuluo.com/meggie/0l2hf6l5p05q75dprrjholne/image_1c3iro5r0scp1ar4ol61tjq19ft1a.png">
+<meta property="og:image" content="http://static.zybuluo.com/meggie/qjx97krz7d2a2rmyuewi1ua7/image_1c3isupm413ll5ep1o401grf1lv21n.png">
+<meta property="og:image" content="http://static.zybuluo.com/meggie/kcl970r1rzmmi7lo99xewpf1/image_1c3kk4qkkktt1die1nr1l0119m69.png">
+<meta property="og:image" content="http://static.zybuluo.com/meggie/l2d0mqn9iq4xdjh9mts6em47/image_1c3l0rin41ghr1s8qc891ihi1ob7p.png">
+<meta property="og:image" content="http://static.zybuluo.com/meggie/cbrpah4je3ml4a6m9urdxdah/image_1c3l0si5acmi1h5u12su1bjhhr516.png">
+<meta property="og:image" content="http://static.zybuluo.com/meggie/jgsccqn6hb1owysdfo2vu5rw/image_1c3l1l9sgmuupnu1jj91if0vbn20.png">
+<meta property="og:image" content="http://static.zybuluo.com/meggie/ff9z2mgj2uqyi534to75rp4g/image_1c3l13soe18od7u4qoj10ql1ifq1j.png">
+<meta property="og:image" content="http://static.zybuluo.com/meggie/4c2yxh8inzrdg445n0oc7o08/image_1c3l1mris673dh9n71odo17hh2t.png">
+<meta property="og:image" content="http://static.zybuluo.com/meggie/o73cy8jc3nf7zuinf8tq3mba/%E7%8E%BB%E7%92%83%E6%9D%AF.jpg">
+<meta property="og:updated_time" content="2018-01-16T08:08:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PS-图层和蒙版">
+<meta name="twitter:description" content="蒙版概念及应用   魔棒等工具抠图时，对图是存在损伤的，操作是不可持续的。如按住delete键删除了图片相关部分时，当需要修改时，需要退回去重新做。蒙版的好处是并没有把内容真删除掉，只是遮挡起来而已。 新增蒙版切换前景色背景色快捷键：【X】，复位初始值为【D】 利用蒙版可反复修改蒙版中，黑色为透明，白色为不透明，灰色为半透明。 修改时主要用到画笔工具，画笔硬度越大，边缘羽化越小。   利用蒙版对">
+<meta name="twitter:image" content="http://static.zybuluo.com/meggie/1ppm39hkqxzc2t2c4epl0v0d/image_1c3in5upa12c1phm6rmb6j1v1nm.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/shanruopeng.github.io/css/style.css">
+  <script src="/shanruopeng.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/shanruopeng.github.io/" class="left">
+                    <span class="site-title">Shanruo&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/shanruopeng.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>归档</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                    <a target="_blank" href="/shanruopeng.github.io/404.html">
+                        <i class="fa fa-heartbeat"></i>
+                        <span>公益404</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/shanruopeng.github.io/">
+                    <img src="/shanruopeng.github.io/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Shanruo&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        业精于勤荒于嬉,行成于思毁于随。
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Shanruo" target="_blank" href="//pengyanyan.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/shanruopeng">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="991526442" "="">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="meggie523" "="">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-图层和蒙版" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      PS-图层和蒙版
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/shanruopeng.github.io/categories/Photoshop/">Photoshop</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-01-16
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <blockquote>
+<p><strong>蒙版概念及应用</strong></p>
+</blockquote>
+<ul>
+<li>魔棒等工具抠图时，对图是存在损伤的，操作是不可持续的。如按住delete键删除了图片相关部分时，当需要修改时，需要退回去重新做。蒙版的好处是并没有把内容真删除掉，只是遮挡起来而已。</li>
+<li><strong>新增蒙版</strong><br><img src="http://static.zybuluo.com/meggie/1ppm39hkqxzc2t2c4epl0v0d/image_1c3in5upa12c1phm6rmb6j1v1nm.png" alt="image_1c3in5upa12c1phm6rmb6j1v1nm.png-2.1kB"><br>切换前景色背景色快捷键：【X】，复位初始值为【D】</li>
+<li>利用蒙版可反复修改蒙版中，黑色为透明，白色为不透明，灰色为半透明。</li>
+<li>修改时主要用到画笔工具，画笔硬度越大，边缘羽化越小。</li>
+</ul>
+<blockquote>
+<p><strong>利用蒙版对智能对象进行抠图</strong></p>
+</blockquote>
+<ul>
+<li>智能对象，或置入的图，不能直接进行编辑，必须用蒙版才能抠图。</li>
+<li>按住ALT键，点击蒙版，即可创建反向蒙版。（蒙版-》属性面板-》反相）</li>
+</ul>
+<blockquote>
+<p><strong>图层概念</strong></p>
+</blockquote>
+<ul>
+<li>图层有多种类别，多种图层相互之间可以进行转换</li>
+<li>需要掌握图层的分配，什么时候需要新建图层，图层层次关系。<br><img src="http://static.zybuluo.com/meggie/ytvdccfn9y47twb5so2ad0d0/image_1c3ip3ll31sccv5j1iaun5h1dv19.png" alt="image_1c3ip3ll31sccv5j1iaun5h1dv19.png-279kB"></li>
+<li><p>按住ctrl，点击，可全部展开或关闭组。</p>
+</li>
+<li><p><strong>新建图层</strong><br><img src="http://static.zybuluo.com/meggie/53n9p434el77a8ijabl11qfd/image_1c3ipc1hk1lj91mc8aeq1ks4j59m.png" alt="image_1c3ipc1hk1lj91mc8aeq1ks4j59m.png-2.2kB">，选中某一图层，点新建，则新图层在选中图层的上方。</p>
+</li>
+<li><p><strong>删除图层</strong></p>
+</li>
+<li><p>Delete键删除，当有选区存在时，将图层直接拖入垃圾桶。</p>
+</li>
+<li><p><strong>复制图层</strong></p>
+</li>
+<li>Ctrl+【J】 复制，图层和图层效果，在按住Alt键，拖动时可复制，复制后位置是重叠的</li>
+<li><p>按住键盘Alt键，左键按住不放，拖动，即可复制。要想保持水平移动复制，拖动后按住shift键。</p>
+</li>
+<li><p><strong>剪切图层</strong></p>
+</li>
+<li><p>快捷键：Ctrl+Shift+J，将图层上剪切一部分建立新图层。</p>
+</li>
+<li><p><strong>图层合并</strong></p>
+</li>
+<li>向下合并 Ctrl+【E】 </li>
+<li>合并可见图层 Ctrl+Shift+【E】 </li>
+<li><p>合并并新建图层 Ctrl+Alt+Shift+【E】</p>
+</li>
+<li><p><strong>群组</strong></p>
+</li>
+<li>选中多个图层，Ctrl + 【G】新建组</li>
+<li>取消群组：Ctrl+Shift+【G】或右键，取消编组</li>
+</ul>
+<blockquote>
+<p><strong>利用图层制作五环</strong></p>
+</blockquote>
+<ul>
+<li>新建图层 3000*2000像素，白底。</li>
+<li>新建图层，椭圆选框工具，绘制圆，Alt+Delete填充。</li>
+<li>选择-&gt;变换选区，按住Shift+Alt，在选区角上，拖动缩小选区。</li>
+<li>缩小后，按住Delete删除，Ctrl+D取消选区</li>
+<li>按住Alt键，光标放在圆环上，拖动，复制圆环。拖动时按住Shift键控制水平线上。</li>
+<li>重复，复制出5个相同的环，分别给各个图层重命名为蓝黑红绿黄</li>
+<li>锁定透明，锁定图像像素，锁定位置，锁定全部。<br><img src="http://static.zybuluo.com/meggie/0l2hf6l5p05q75dprrjholne/image_1c3iro5r0scp1ar4ol61tjq19ft1a.png" alt="image_1c3iro5r0scp1ar4ol61tjq19ft1a.png-2.8kB"></li>
+<li>选中黑色图层框，调整锁定透明，Alt+Delete填充黑色。</li>
+<li>其它几个环同理，完成填充。</li>
+<li>层次关系处理：1、删除重叠部分，2、复制多余一块，盖在要覆盖的图层上。</li>
+<li>选中蓝色图层，建立选区，按住Ctrl+J，复制图层，将新图层移动到黄色图层上方，覆盖两个环交叉的部分。</li>
+<li>后面绿色环交叉部分同理处理。</li>
+<li>合并图层，完成。<br><img src="http://static.zybuluo.com/meggie/qjx97krz7d2a2rmyuewi1ua7/image_1c3isupm413ll5ep1o401grf1lv21n.png" alt="image_1c3isupm413ll5ep1o401grf1lv21n.png-54kB"></li>
+</ul>
+<blockquote>
+<p><strong>图层混合模式</strong></p>
+</blockquote>
+<ul>
+<li>Ctrl + Shift + U 为去色  图像-》调整-》去色<br><img src="http://static.zybuluo.com/meggie/kcl970r1rzmmi7lo99xewpf1/image_1c3kk4qkkktt1die1nr1l0119m69.png" alt="image_1c3kk4qkkktt1die1nr1l0119m69.png-10.9kB"></li>
+<li>正片叠底，调暗，图片上的颜色为黑色，正片叠底后仍为黑色；图片上的颜色为白色，正片叠底后为自叠底图层的颜色。</li>
+</ul>
+<p><img src="http://static.zybuluo.com/meggie/l2d0mqn9iq4xdjh9mts6em47/image_1c3l0rin41ghr1s8qc891ihi1ob7p.png" alt="image_1c3l0rin41ghr1s8qc891ihi1ob7p.png-63.3kB"></p>
+<p><img src="http://static.zybuluo.com/meggie/cbrpah4je3ml4a6m9urdxdah/image_1c3l0si5acmi1h5u12su1bjhhr516.png" alt="image_1c3l0si5acmi1h5u12su1bjhhr516.png-60.1kB"></p>
+<p><img src="http://static.zybuluo.com/meggie/jgsccqn6hb1owysdfo2vu5rw/image_1c3l1l9sgmuupnu1jj91if0vbn20.png" alt="image_1c3l1l9sgmuupnu1jj91if0vbn20.png-182.3kB"></p>
+<ul>
+<li>滤色，调亮，图片上的颜色是白色时，滤色后仍为白色；图片上颜色为黑色时，滤色后为滤色图层的颜色；</li>
+</ul>
+<p><img src="http://static.zybuluo.com/meggie/ff9z2mgj2uqyi534to75rp4g/image_1c3l13soe18od7u4qoj10ql1ifq1j.png" alt="image_1c3l13soe18od7u4qoj10ql1ifq1j.png-62.2kB"></p>
+<p><img src="http://static.zybuluo.com/meggie/4c2yxh8inzrdg445n0oc7o08/image_1c3l1mris673dh9n71odo17hh2t.png" alt="image_1c3l1mris673dh9n71odo17hh2t.png-91.2kB"></p>
+<ul>
+<li>蒙版反向快捷键： Ctrl+I </li>
+</ul>
+<blockquote>
+<p>抠出玻璃杯示例</p>
+</blockquote>
+<p><img src="http://static.zybuluo.com/meggie/o73cy8jc3nf7zuinf8tq3mba/%E7%8E%BB%E7%92%83%E6%9D%AF.jpg" alt="玻璃杯.jpg-99.3kB"><br>Ctrl+ A 全选<br>Ctrl+ C 复制<br>创建蒙版<br>按住ALT键，点击蒙版<br>Ctrl+V 粘贴<br>选中蒙版，右键，停用蒙版。<br>利用多边形套索工具抠出玻璃杯<br>启用蒙版<br>选区方向，填充黑色，透明效果出来了。<br>复制图层，叠加，或图像-》调整-》色阶</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年01月16日 16:08</p>
+        <p>原始链接： <a class="post-url" href="/shanruopeng.github.io/2018/01/17/图层和蒙版/" title="PS-图层和蒙版">http://shanruopeng.github.io/shanruopeng.github.io/2018/01/17/图层和蒙版/</a></p>
+        <footer>
+            <a href="http://shanruopeng.github.io/shanruopeng.github.io">
+                <img src="/shanruopeng.github.io/images/logo.png" alt="Shanruo Peng">
+                Shanruo Peng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://shanruopeng.github.io/shanruopeng.github.io/2018/01/17/图层和蒙版/&title=《PS-图层和蒙版》 — Shanruo's Blog&pic=/images/img2.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://shanruopeng.github.io/shanruopeng.github.io/2018/01/17/图层和蒙版/&title=《PS-图层和蒙版》 — Shanruo's Blog&source=不积跬步，无以至千里；不积小流，无以成江海。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://shanruopeng.github.io/shanruopeng.github.io/2018/01/17/图层和蒙版/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PS-图层和蒙版》 — Shanruo's Blog&url=http://shanruopeng.github.io/shanruopeng.github.io/2018/01/17/图层和蒙版/&via=http://shanruopeng.github.io/shanruopeng.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://shanruopeng.github.io/shanruopeng.github.io/2018/01/17/图层和蒙版/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://shanruopeng.github.io/shanruopeng.github.io/2018/01/17/图层和蒙版/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" class="color4">Photoshop学习笔记</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/shanruopeng.github.io/2018/01/18/PS 修图美化/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          PS-修图美化
+        
+      </span>
+    </a>
+  
+  
+    <a href="/shanruopeng.github.io/2018/01/12/PS 常用基础操作/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">PS-常用基础操作</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Shanruo Peng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://shanruopeng.github.io/shanruopeng.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/shanruopeng.github.io/categories/Photoshop/">Photoshop</a><a class="category-link" href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/shanruopeng.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/archives">
+                    <i class="fa fa-archive"></i><span>归档</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="/shanruopeng.github.io/404.html">
+                    <i class="fa fa-heartbeat"></i><span>公益404</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/shanruopeng.github.io/js/search.js"></script>
+<script src="/shanruopeng.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/shanruopeng.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/shanruopeng.github.io/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

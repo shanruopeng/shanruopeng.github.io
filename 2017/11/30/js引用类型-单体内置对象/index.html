@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>js引用类型-单体内置对象 | Shanruo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Shanruo,Shanruo's Blog">
+  
+  <meta name="description" content="Global对象   不属于任何其他对象的属性和方法，最终都是Global对象的属性和方法  所有在全局作用域中定义的属性和函数，都是Global 对象的属性 诸如isNaN()、isFinite()、parseInt()以及parseFloat()，实际上全都是Global对象的方法   1、URI 编码方法   Global 对象的encodeURI()和encodeURIComponent">
+<meta name="keywords" content="javascript高级程序设计,前端基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js引用类型-单体内置对象">
+<meta property="og:url" content="http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/js引用类型-单体内置对象/index.html">
+<meta property="og:site_name" content="Shanruo&#39;s Blog">
+<meta property="og:description" content="Global对象   不属于任何其他对象的属性和方法，最终都是Global对象的属性和方法  所有在全局作用域中定义的属性和函数，都是Global 对象的属性 诸如isNaN()、isFinite()、parseInt()以及parseFloat()，实际上全都是Global对象的方法   1、URI 编码方法   Global 对象的encodeURI()和encodeURIComponent">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:updated_time" content="2017-11-29T08:02:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js引用类型-单体内置对象">
+<meta name="twitter:description" content="Global对象   不属于任何其他对象的属性和方法，最终都是Global对象的属性和方法  所有在全局作用域中定义的属性和函数，都是Global 对象的属性 诸如isNaN()、isFinite()、parseInt()以及parseFloat()，实际上全都是Global对象的方法   1、URI 编码方法   Global 对象的encodeURI()和encodeURIComponent">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/shanruopeng.github.io/css/style.css">
+  <script src="/shanruopeng.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/shanruopeng.github.io/" class="left">
+                    <span class="site-title">Shanruo&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/shanruopeng.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>归档</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                    <a target="_blank" href="/shanruopeng.github.io/404.html">
+                        <i class="fa fa-heartbeat"></i>
+                        <span>公益404</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/shanruopeng.github.io/">
+                    <img src="/shanruopeng.github.io/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Shanruo&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        业精于勤荒于嬉,行成于思毁于随。
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Shanruo" target="_blank" href="//pengyanyan.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/shanruopeng">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="991526442" "="">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="meggie523" "="">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-js引用类型-单体内置对象" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      js引用类型-单体内置对象
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-11-29
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <blockquote>
+<p><strong>Global对象</strong></p>
+</blockquote>
+<ul>
+<li>不属于任何其他对象的属性和方法，最终都是Global对象的属性和方法 </li>
+<li>所有在全局作用域中定义的属性和函数，都是Global 对象的属性</li>
+<li>诸如isNaN()、isFinite()、parseInt()以及parseFloat()，实际上全都是Global对象的方法</li>
+</ul>
+<blockquote>
+<p>1、URI 编码方法</p>
+</blockquote>
+<ul>
+<li>Global 对象的<strong>encodeURI()</strong>和<strong>encodeURIComponent()</strong>方法可以对URI（Uniform Resource Identifiers，通用资源标识符）进行编码，以便发送给浏览器。</li>
+<li>有效的URI 中不能包含某些字符，例如空格。而这两个URI 编码方法就可以对URI进行编码，它们用特殊的UTF-8 编码替换所有无效的字符，从而让浏览器能够接受和理解。</li>
+<li>encodeURI()主要用于整个URI,不会对本身属于URI的特殊字符进行编码，例如冒号、正斜杠、问号和井字号。</li>
+<li><p>encodeURIComponent()主要用于对URI中的某一段,会对它发现的任何非标准字符进行编码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> uri = <span class="string">"http://www.wrox.com/illegal value.htm#start"</span>;</span><br><span class="line"><span class="comment">//"http://www.wrox.com/illegal%20value.htm#start"</span></span><br><span class="line">alert(<span class="built_in">encodeURI</span>(uri));</span><br><span class="line"><span class="comment">//"http%3A%2F%2Fwww.wrox.com%2Fillegal%20value.htm%23start"</span></span><br><span class="line">alert(<span class="built_in">encodeURIComponent</span>(uri));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>与encodeURI()和encodeURIComponent()方法对应的两个方法分别是<strong>decodeURI()</strong>和<br><strong>decodeURIComponent()</strong>。</p>
+</li>
+<li>decodeURI()只能对使用encodeURI()替换的字符进行解码</li>
+<li>decodeURIComponent()能够解码使用encodeURIComponent()编码的所有字符，即它可以解码任何特殊字符的编码<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> uri = <span class="string">"http%3A%2F%2Fwww.wrox.com%2Fillegal%20value.htm%23start"</span>;</span><br><span class="line"><span class="comment">//http%3A%2F%2Fwww.wrox.com%2Fillegal value.htm%23start</span></span><br><span class="line">alert(<span class="built_in">decodeURI</span>(uri));</span><br><span class="line"><span class="comment">//http://www.wrox.com/illegal value.htm#start</span></span><br><span class="line">alert(<span class="built_in">decodeURIComponent</span>(uri));</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>2、eval()方法</p>
+</blockquote>
+<ul>
+<li>eval()方法就像是一个完整的ECMAScript解析器，它只接受一个参数，即要执行的ECMAScript （或JavaScript）字符串</li>
+<li>当解析器发现代码中调用eval()方法时，它会将传入的参数当作实际的ECMAScript 语句来解析，然后把执行结果插入到原位置。</li>
+<li><p>通过eval()执行的代码被认为是包含该次调用的执行环境的一部分，因此被执行的代码具有与该执行环境相同的作用域链</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> msg = <span class="string">"hello world"</span>;</span><br><span class="line"><span class="built_in">eval</span>(<span class="string">"alert(msg)"</span>); <span class="comment">//"hello world"</span></span><br><span class="line"><span class="built_in">eval</span>(<span class="string">"function sayHi() &#123; alert('hi'); &#125;"</span>);</span><br><span class="line">sayHi();<span class="comment">//"hi"</span></span><br><span class="line"><span class="built_in">eval</span>(<span class="string">"var msg = 'hello world'; "</span>);</span><br><span class="line">alert(msg); <span class="comment">//"hello world"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>严格模式下，在外部访问不到eval()中创建的任何变量或函数，因此前面两个例子都会导致错误。同样，在严格模式下，为eval 赋值也会导致错误：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="built_in">eval</span> = <span class="string">"hi"</span>; <span class="comment">//causes error</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>3、Global对象的属性</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>undefined</td>
+<td>特殊值undefined</td>
+<td>Date</td>
+<td>构造函数Date</td>
+</tr>
+<tr>
+<td>NaN</td>
+<td>特殊值NaN</td>
+<td>RegExp</td>
+<td>构造函数RegExp</td>
+</tr>
+<tr>
+<td>Infinity</td>
+<td>特殊值Infinity</td>
+<td>Error</td>
+<td>构造函数Error</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>构造函数Object</td>
+<td>EvalError</td>
+<td>构造函数EvalError</td>
+</tr>
+<tr>
+<td>Array</td>
+<td>构造函数Array</td>
+<td>RangeError</td>
+<td>构造函数RangeError</td>
+</tr>
+<tr>
+<td>Function</td>
+<td>构造函数Function</td>
+<td>ReferenceError</td>
+<td>构造函数ReferenceError</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>构造函数Boolean</td>
+<td>SyntaxError</td>
+<td>构造函数SyntaxError</td>
+</tr>
+<tr>
+<td>String</td>
+<td>构造函数String</td>
+<td>TypeError</td>
+<td>构造函数TypeError</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>构造函数Number</td>
+<td>URIError</td>
+<td>构造函数URIError</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>ECMAScript 5 明确禁止给undefined、NaN和Infinity赋值，这样做即使在非严格模式下也会导致错误。</li>
+</ul>
+<blockquote>
+<p>4、window对象</p>
+</blockquote>
+<ul>
+<li>Web 浏览器都是将Global对象作为window对象的一部分加以实现的,在全局作用域中声明的所有变量和函数，都成为了window对象的属性。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> color = <span class="string">"red"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayColor</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="built_in">window</span>.color);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.sayColor(); <span class="comment">//"red"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>Math对象</strong></p>
+</blockquote>
+<ul>
+<li>与我们在JavaScript 直接编写的计算功能相比，Math对象提供的计算功能执行起来要快得多。</li>
+<li>Math 对象中还提供了辅助完成这些计算的属性和方法。</li>
+</ul>
+<blockquote>
+<p>1、Math对象的属性</p>
+</blockquote>
+<ul>
+<li>Math 对象包含的属性大都是数学计算中可能会用到的一些特殊值。下表列出了这些属性。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属 性</th>
+<th>说 明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Math.E</td>
+<td>自然对数的底数，即常量e的值</td>
+</tr>
+<tr>
+<td>Math.LN10</td>
+<td>10的自然对数</td>
+</tr>
+<tr>
+<td>Math.LN2</td>
+<td>2的自然对数</td>
+</tr>
+<tr>
+<td>Math.LOG2E</td>
+<td>以2为底e的对数</td>
+</tr>
+<tr>
+<td>Math.LOG10E</td>
+<td>以10为底e的对数</td>
+</tr>
+<tr>
+<td>Math.PI</td>
+<td>π的值</td>
+</tr>
+<tr>
+<td>Math.SQRT1_2</td>
+<td>1/2的平方根（即2的平方根的倒数）</td>
+</tr>
+<tr>
+<td>Math.SQRT2</td>
+<td>2的平方根</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>2、min()和max()方法</p>
+</blockquote>
+<ul>
+<li>min()和max()方法用于确定一组数值中的最小值和最大值</li>
+<li>这两个方法都可以接收任意多个数值参数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max(<span class="number">3</span>, <span class="number">54</span>, <span class="number">32</span>, <span class="number">16</span>);</span><br><span class="line">alert(max); <span class="comment">//54</span></span><br><span class="line"><span class="keyword">var</span> min = <span class="built_in">Math</span>.min(<span class="number">3</span>, <span class="number">54</span>, <span class="number">32</span>, <span class="number">16</span>);</span><br><span class="line">alert(min); <span class="comment">//3</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>要找到数组中的最大或最小值，可以像下面这样使用apply()方法。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> values = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>];</span><br><span class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="built_in">Math</span>, values);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>3、舍入方法</p>
+</blockquote>
+<ul>
+<li><strong>Math.ceil()</strong>执行向上舍入，即它总是将数值向上舍入为最接近的整数；</li>
+<li><strong>Math.floor()</strong>执行向下舍入，即它总是将数值向下舍入为最接近的整数；</li>
+<li><strong>Math.round()</strong>执行标准舍入，即它总是将数值四舍五入为最接近的整数；<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="built_in">Math</span>.ceil(<span class="number">25.9</span>)); <span class="comment">//26</span></span><br><span class="line">alert(<span class="built_in">Math</span>.ceil(<span class="number">25.5</span>)); <span class="comment">//26</span></span><br><span class="line">alert(<span class="built_in">Math</span>.ceil(<span class="number">25.1</span>)); <span class="comment">//26</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">Math</span>.round(<span class="number">25.9</span>)); <span class="comment">//26</span></span><br><span class="line">alert(<span class="built_in">Math</span>.round(<span class="number">25.5</span>)); <span class="comment">//26</span></span><br><span class="line">alert(<span class="built_in">Math</span>.round(<span class="number">25.1</span>)); <span class="comment">//25</span></span><br><span class="line"></span><br><span class="line">alert(<span class="built_in">Math</span>.floor(<span class="number">25.9</span>)); <span class="comment">//25</span></span><br><span class="line">alert(<span class="built_in">Math</span>.floor(<span class="number">25.5</span>)); <span class="comment">//25</span></span><br><span class="line">alert(<span class="built_in">Math</span>.floor(<span class="number">25.1</span>)); <span class="comment">//25</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>4、random()方法</p>
+</blockquote>
+<ul>
+<li>Math.random()方法返回大于等于0 小于1 的一个随机数。</li>
+<li><p>套用下面的公式，就可以利用Math.random()从某个整数范围内随机选择一个值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">值 = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * 可能值的总数 + 第一个可能的值)</span><br><span class="line"><span class="comment">//选择一个1到10 之间的数值</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10</span> + <span class="number">1</span>);</span><br><span class="line"><span class="comment">//选择一个2到10之间的数值</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">9</span> + <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多数情况下，其实都可以通过一个函数来计算可能值的总数和第一个可能的值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectFrom</span>(<span class="params">lowerValue, upperValue</span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> choices = upperValue - lowerValue + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * choices + lowerValue);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> num = selectFrom(<span class="number">2</span>, <span class="number">10</span>);</span><br><span class="line">alert(num); <span class="comment">// 介于2 和10 之间（包括2 和10）的一个数值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>, <span class="string">"yellow"</span>, <span class="string">"black"</span>, <span class="string">"purple"</span>, <span class="string">"brown"</span>];</span><br><span class="line"><span class="keyword">var</span> color = colors[selectFrom(<span class="number">0</span>, colors.length<span class="number">-1</span>)];</span><br><span class="line">aler t(color); <span class="comment">// 可能是数组中包含的任何一个字符串</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>5、其它方法</p>
+</blockquote>
+<ul>
+<li>Math 对象中还包含其他一些与完成各种简单或复杂计算有关的方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方 法</th>
+<th>说 明</th>
+<th>方 法</th>
+<th>说 明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Math.abs(num)</td>
+<td>返回num 的绝对值</td>
+<td>Math.asin(x)</td>
+<td>返回x 的反正弦值</td>
+</tr>
+<tr>
+<td>Math.exp(num)</td>
+<td>返回Math.E 的num次幂</td>
+<td>Math.atan(x)</td>
+<td>返回x 的反正切值</td>
+</tr>
+<tr>
+<td>Math.log(num)</td>
+<td>返回num 的自然对数</td>
+<td>Math.atan2(y,x)</td>
+<td>返回y/x 的反正切值</td>
+</tr>
+<tr>
+<td>Math.pow(num,power)</td>
+<td>返回num 的power次幂</td>
+<td>Math.cos(x)</td>
+<td>返回x 的余弦值</td>
+</tr>
+<tr>
+<td>Math.sqrt(num)</td>
+<td>返回num 的平方根</td>
+<td>Math.sin(x)</td>
+<td>返回x 的正弦值</td>
+</tr>
+<tr>
+<td>Math.acos(x)</td>
+<td>返回x 的反余弦值</td>
+<td>Math.tan(x)</td>
+<td>返回x 的正切值</td>
+</tr>
+</tbody>
+</table>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年11月29日 16:02</p>
+        <p>原始链接： <a class="post-url" href="/shanruopeng.github.io/2017/11/30/js引用类型-单体内置对象/" title="js引用类型-单体内置对象">http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/js引用类型-单体内置对象/</a></p>
+        <footer>
+            <a href="http://shanruopeng.github.io/shanruopeng.github.io">
+                <img src="/shanruopeng.github.io/images/logo.png" alt="Shanruo Peng">
+                Shanruo Peng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/js引用类型-单体内置对象/&title=《js引用类型-单体内置对象》 — Shanruo's Blog&pic=/images/img7.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/js引用类型-单体内置对象/&title=《js引用类型-单体内置对象》 — Shanruo's Blog&source=不积跬步，无以至千里；不积小流，无以成江海。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/js引用类型-单体内置对象/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js引用类型-单体内置对象》 — Shanruo's Blog&url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/js引用类型-单体内置对象/&via=http://shanruopeng.github.io/shanruopeng.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/js引用类型-单体内置对象/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/js引用类型-单体内置对象/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" class="color2">javascript高级程序设计</a>
+      
+    <a href="/shanruopeng.github.io/tags/前端基础/" class="color5">前端基础</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/shanruopeng.github.io/2017/11/30/js引用类型-小结/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          js引用类型-小结
+        
+      </span>
+    </a>
+  
+  
+    <a href="/shanruopeng.github.io/2017/11/30/js引用类型-基本包装类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">js引用类型-基本包装类型</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Shanruo Peng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://shanruopeng.github.io/shanruopeng.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/shanruopeng.github.io/categories/Photoshop/">Photoshop</a><a class="category-link" href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/shanruopeng.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/archives">
+                    <i class="fa fa-archive"></i><span>归档</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="/shanruopeng.github.io/404.html">
+                    <i class="fa fa-heartbeat"></i><span>公益404</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/shanruopeng.github.io/js/search.js"></script>
+<script src="/shanruopeng.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/shanruopeng.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/shanruopeng.github.io/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

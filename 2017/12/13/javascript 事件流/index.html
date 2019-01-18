@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>javascript-事件流 | Shanruo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Shanruo,Shanruo's Blog">
+  
+  <meta name="description" content="事件流   事件流描述的是从页面中接收事件的顺序。 IE 的事件流是事件冒泡流，而Netscape Communicator 的事件流是事件捕获流。   1、事件冒泡   IE 的事件流叫做事件冒泡（eventbubbling），即事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。  123456789&amp;lt;!DOCTYPE html&amp;g">
+<meta name="keywords" content="javascript高级程序设计,前端基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-事件流">
+<meta property="og:url" content="http://shanruopeng.github.io/shanruopeng.github.io/2017/12/13/javascript 事件流/index.html">
+<meta property="og:site_name" content="Shanruo&#39;s Blog">
+<meta property="og:description" content="事件流   事件流描述的是从页面中接收事件的顺序。 IE 的事件流是事件冒泡流，而Netscape Communicator 的事件流是事件捕获流。   1、事件冒泡   IE 的事件流叫做事件冒泡（eventbubbling），即事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。  123456789&amp;lt;!DOCTYPE html&amp;g">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5912336-4716d20bdae6c4f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5912336-e32a729a5de7eca0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/5912336-abe801a8e7e1d7db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-12-12T09:44:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript-事件流">
+<meta name="twitter:description" content="事件流   事件流描述的是从页面中接收事件的顺序。 IE 的事件流是事件冒泡流，而Netscape Communicator 的事件流是事件捕获流。   1、事件冒泡   IE 的事件流叫做事件冒泡（eventbubbling），即事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。  123456789&amp;lt;!DOCTYPE html&amp;g">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/5912336-4716d20bdae6c4f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/shanruopeng.github.io/css/style.css">
+  <script src="/shanruopeng.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/shanruopeng.github.io/" class="left">
+                    <span class="site-title">Shanruo&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/shanruopeng.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>归档</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                    <a target="_blank" href="/shanruopeng.github.io/404.html">
+                        <i class="fa fa-heartbeat"></i>
+                        <span>公益404</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/shanruopeng.github.io/">
+                    <img src="/shanruopeng.github.io/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Shanruo&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        业精于勤荒于嬉,行成于思毁于随。
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Shanruo" target="_blank" href="//pengyanyan.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/shanruopeng">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="991526442" "="">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="meggie523" "="">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-javascript 事件流" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      javascript-事件流
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-12-12
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <blockquote>
+<p><strong>事件流</strong></p>
+</blockquote>
+<ul>
+<li>事件流描述的是从页面中接收事件的顺序。</li>
+<li>IE 的事件流是事件冒泡流，而Netscape Communicator 的事件流是事件捕获流。</li>
+</ul>
+<blockquote>
+<p>1、事件冒泡</p>
+</blockquote>
+<ul>
+<li>IE 的事件流叫做事件冒泡（eventbubbling），即事件开始时由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>Event Bubbling Example<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myDiv"</span>&gt;</span>Click Me<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果你单击了页面中的&lt;div&gt;元素，那么这个click 事件会按照如下顺序传播.</span><br><span class="line">(1) &lt;div&gt;</span><br><span class="line">(2) &lt;body&gt;</span><br><span class="line">(3) &lt;html&gt;</span><br><span class="line">(4) document</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/5912336-4716d20bdae6c4f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="事件冒泡.png"></p>
+<blockquote>
+<p>2、事件捕获</p>
+</blockquote>
+<ul>
+<li>事件捕获的思想是不太具体的节点应该更早接收到事件，而最具体的节点应该最后接收到事件。</li>
+<li>事件捕获的用意在于在事件到达预定目标之前捕获它。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">单击&lt;div&gt;元素就会以下列顺序触发click 事件。</span><br><span class="line">(1) document</span><br><span class="line">(2) &lt;html&gt;</span><br><span class="line">(3) &lt;body&gt;</span><br><span class="line">(4) &lt;div&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/5912336-e32a729a5de7eca0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="事件捕获.png"></p>
+<blockquote>
+<p>3、DOM事件流</p>
+</blockquote>
+<ul>
+<li>“DOM2级事件”规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。</li>
+<li>首先发生的是事件捕获，为截获事件提供了机会。然后是实际的目标接收到事件。最后一个阶段是冒泡阶段，可以在这个阶段对事件做出响应。<br><img src="http://upload-images.jianshu.io/upload_images/5912336-abe801a8e7e1d7db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="事件触发顺序.png"></li>
+</ul>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年12月12日 17:44</p>
+        <p>原始链接： <a class="post-url" href="/shanruopeng.github.io/2017/12/13/javascript 事件流/" title="javascript-事件流">http://shanruopeng.github.io/shanruopeng.github.io/2017/12/13/javascript 事件流/</a></p>
+        <footer>
+            <a href="http://shanruopeng.github.io/shanruopeng.github.io">
+                <img src="/shanruopeng.github.io/images/logo.png" alt="Shanruo Peng">
+                Shanruo Peng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/12/13/javascript 事件流/&title=《javascript-事件流》 — Shanruo's Blog&pic=/images/img2.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/12/13/javascript 事件流/&title=《javascript-事件流》 — Shanruo's Blog&source=不积跬步，无以至千里；不积小流，无以成江海。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://shanruopeng.github.io/shanruopeng.github.io/2017/12/13/javascript 事件流/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《javascript-事件流》 — Shanruo's Blog&url=http://shanruopeng.github.io/shanruopeng.github.io/2017/12/13/javascript 事件流/&via=http://shanruopeng.github.io/shanruopeng.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/12/13/javascript 事件流/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://shanruopeng.github.io/shanruopeng.github.io/2017/12/13/javascript 事件流/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" class="color2">javascript高级程序设计</a>
+      
+    <a href="/shanruopeng.github.io/tags/前端基础/" class="color5">前端基础</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/shanruopeng.github.io/2017/12/13/javascript 事件处理程序/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          javascript-事件处理程序
+        
+      </span>
+    </a>
+  
+  
+    <a href="/shanruopeng.github.io/2017/12/08/DOM 扩展/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">javascript-DOM扩展</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Shanruo Peng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://shanruopeng.github.io/shanruopeng.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/shanruopeng.github.io/categories/Photoshop/">Photoshop</a><a class="category-link" href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/shanruopeng.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/archives">
+                    <i class="fa fa-archive"></i><span>归档</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="/shanruopeng.github.io/404.html">
+                    <i class="fa fa-heartbeat"></i><span>公益404</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/shanruopeng.github.io/js/search.js"></script>
+<script src="/shanruopeng.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/shanruopeng.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/shanruopeng.github.io/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>javascript-html5 脚本编程 | Shanruo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Shanruo,Shanruo's Blog">
+  
+  <meta name="description" content="1、跨文档消息传递   跨文档消息传送（cross-documentmessaging），有时候简称为XDM，指的是在来自不同域的页面间传递消息。 XDM 的核心是postMessage()方法。 postMessage()方法接收两个参数：一条消息和一个表示消息接收方来自哪个域的字符串。第二个参数对保障安全通信非常重要，可以防止浏览器把消息发送到不安全的地方。  12345//注意：所有支持X">
+<meta name="keywords" content="javascript高级程序设计,前端基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-html5 脚本编程">
+<meta property="og:url" content="http://shanruopeng.github.io/shanruopeng.github.io/2018/01/04/HTML5 脚本编程/index.html">
+<meta property="og:site_name" content="Shanruo&#39;s Blog">
+<meta property="og:description" content="1、跨文档消息传递   跨文档消息传送（cross-documentmessaging），有时候简称为XDM，指的是在来自不同域的页面间传递消息。 XDM 的核心是postMessage()方法。 postMessage()方法接收两个参数：一条消息和一个表示消息接收方来自哪个域的字符串。第二个参数对保障安全通信非常重要，可以防止浏览器把消息发送到不安全的地方。  12345//注意：所有支持X">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:image" content="http://static.zybuluo.com/meggie/rwh7a9u425nfdylw81xkwnkj/image_1c2tl13n61khbehud3m1nlp17iq9.png">
+<meta property="og:image" content="http://static.zybuluo.com/meggie/j0we9swkl7ozf6qe55gfhrcm/image_1c2tl2edb1d7cucq13fhirgc9dm.png">
+<meta property="og:updated_time" content="2018-01-04T09:13:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript-html5 脚本编程">
+<meta name="twitter:description" content="1、跨文档消息传递   跨文档消息传送（cross-documentmessaging），有时候简称为XDM，指的是在来自不同域的页面间传递消息。 XDM 的核心是postMessage()方法。 postMessage()方法接收两个参数：一条消息和一个表示消息接收方来自哪个域的字符串。第二个参数对保障安全通信非常重要，可以防止浏览器把消息发送到不安全的地方。  12345//注意：所有支持X">
+<meta name="twitter:image" content="http://static.zybuluo.com/meggie/rwh7a9u425nfdylw81xkwnkj/image_1c2tl13n61khbehud3m1nlp17iq9.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/shanruopeng.github.io/css/style.css">
+  <script src="/shanruopeng.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/shanruopeng.github.io/" class="left">
+                    <span class="site-title">Shanruo&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/shanruopeng.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>归档</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                    <a target="_blank" href="/shanruopeng.github.io/404.html">
+                        <i class="fa fa-heartbeat"></i>
+                        <span>公益404</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/shanruopeng.github.io/">
+                    <img src="/shanruopeng.github.io/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Shanruo&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        业精于勤荒于嬉,行成于思毁于随。
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Shanruo" target="_blank" href="//pengyanyan.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/shanruopeng">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="991526442" "="">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="meggie523" "="">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-HTML5 脚本编程" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      javascript-html5 脚本编程
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2018-01-03
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <blockquote>
+<p><strong>1、跨文档消息传递</strong></p>
+</blockquote>
+<ul>
+<li>跨文档消息传送（cross-documentmessaging），有时候简称为XDM，指的是在来自不同域的页面间传递消息。</li>
+<li>XDM 的核心是postMessage()方法。</li>
+<li>postMessage()方法接收两个参数：一条消息和一个表示消息接收方来自哪个域的字符串。第二个参数对保障安全通信非常重要，可以防止浏览器把消息发送到不安全的地方。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注意：所有支持XDM 的浏览器也支持iframe 的contentWindow 属性</span></span><br><span class="line"><span class="keyword">var</span> iframeWindow = <span class="built_in">document</span>.getElementById(<span class="string">"myframe"</span>).contentWindow;</span><br><span class="line">iframeWindow.postMessage(<span class="string">"A secret"</span>, <span class="string">"http://www.wrox.com"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果来源匹配，消息会传递到内嵌框架中；否则，postMessage()什么也不做。</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>接收到XDM消息时，会触发window对象的message事件。这个事件是以异步形式触发的，因此从发送消息到接收消息（触发接收窗口的message事件）可能要经过一段时间的延迟。</li>
+<li>触发message事件后，传递给onmessage处理程序的事件对象包含以下三方面的重要信息。<br>（1）data：作为postMessage()第一个参数传入的字符串数据。<br>（2）origin：发送消息的文档所在的域<br>（3）source：发送消息的文档的window对象的代理。这个代理对象主要用于在发送上一条消息的窗口中调用postMessage()方法。如果发送消息的窗口来自同一个域，那这个对象就是window。</li>
+<li>在onmessage 处理程序中检测消息来源可以确保传入的消息来自已知的页面。基本的检测模式如下。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">EventUtil.addHandler(<span class="built_in">window</span>, <span class="string">"message"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//确保发送消息的域是已知的域</span></span><br><span class="line">    <span class="keyword">if</span> (event.origin == <span class="string">"http://www.wrox.com"</span>)&#123;</span><br><span class="line">        <span class="comment">//处理接收到的数据</span></span><br><span class="line">        processMessage(event.data);</span><br><span class="line">        <span class="comment">//可选：向来源窗口发送回执</span></span><br><span class="line">        event.source.postMessage(<span class="string">"Received!"</span>, <span class="string">"http://p2p.wrox.com"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>2、原生拖放</strong></p>
+</blockquote>
+<ul>
+<li>HTML5 以IE 的实例为基础制定了拖放规范。Firefox 3.5、Safari 3+和Chrome 也根据HTML5 规范实现了原生拖放功能。</li>
+</ul>
+<blockquote>
+<p>2.1 拖放事件</p>
+</blockquote>
+<ul>
+<li>拖动某元素时，将依次触发下列事件。<br>(1) dragstart<br>(2) drag<br>(3) dragend</li>
+<li>当某个元素被拖动到一个有效的放置目标上时，下列事件会依次发生：<br>(1) dragenter<br>(2) dragover<br>(3) dragleave 或drop</li>
+</ul>
+<blockquote>
+<p>2.2 自定义放置目标</p>
+</blockquote>
+<ul>
+<li>虽然所有元素都支持放置目标事件，但这些元素默认是不允许放置的。如果拖动元素经过不允许放置的元素，无论用户如何操作，都不会发生drop 事件。</li>
+<li>可以把任何元素变成有效的放置目标，方法是重写dragenter 和dragover 事件的默认行为。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> droptarget = <span class="built_in">document</span>.getElementById(<span class="string">"droptarget"</span>);</span><br><span class="line">EventUtil.addHandler(droptarget, <span class="string">"dragover"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    EventUtil.preventDefault(event);</span><br><span class="line">&#125;);</span><br><span class="line">EventUtil.addHandler(droptarget, <span class="string">"dragenter"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    EventUtil.preventDefault(event);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在Firefox 3.5+中，放置事件的默认行为是打开被放到放置目标上的URL。</li>
+<li>为了让Firefox 支持正常的拖放，还要取消drop 事件的默认行为，阻止它打开URL。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">EventUtil.addHandler(droptarget, <span class="string">"drop"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    EventUtil.preventDefault(event);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.3 dataTransfer 对象</p>
+</blockquote>
+<ul>
+<li>dataTransfer 对象，它是事件对象的一个属性，用于从被拖动元素向放置目标传递字符串格式的数据。</li>
+<li>因为它是事件对象的属性，所以只能在拖放事件的事件处理程序中访问dataTransfer 对象。</li>
+<li>在事件处理程序中，可以使用这个对象的属性和方法来完善拖放功能。</li>
+<li>dataTransfer 对象有两个主要方法：getData()和setData()。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置和接收文本数据</span></span><br><span class="line">event.dataTransfer.setData(<span class="string">"text"</span>, <span class="string">"some text"</span>);</span><br><span class="line"><span class="keyword">var</span> text = event.dataTransfer.getData(<span class="string">"text"</span>);</span><br><span class="line"><span class="comment">//设置和接收URL</span></span><br><span class="line">event.dataTransfer.setData(<span class="string">"URL"</span>, <span class="string">"http://www.wrox.com/"</span>);</span><br><span class="line"><span class="keyword">var</span> url = event.dataTransfer.getData(<span class="string">"URL"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>为了更好地在跨浏览器的情况下从dataTransfer 对象取得数据，最好在取得URL 数据时检测两个值，而在取得文本数据时使用”Text”。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dataTransfer = event.dataTransfer;</span><br><span class="line"><span class="comment">//读取URL</span></span><br><span class="line"><span class="keyword">var</span> url = dataTransfer.getData(<span class="string">"url"</span>) ||dataTransfer.getData(<span class="string">"text/uri-list"</span>);</span><br><span class="line"><span class="comment">//读取文本</span></span><br><span class="line"><span class="keyword">var</span> text = dataTransfer.getData(<span class="string">"Text"</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.4 dropEffect 和 effectAllowed</p>
+</blockquote>
+<ul>
+<li>通过dropEffect 属性可以知道被拖动的元素能够执行哪种放置行为。这个属性有下列4个可能的值。<br>(1) “none”：不能把拖动的元素放在这里。这是除文本框之外所有元素的默认值。<br>(2) “move”：应该把拖动的元素移动到放置目标。<br>(3) “copy”：应该把拖动的元素复制到放置目标。<br>(4) “link”：表示放置目标会打开拖动的元素（但拖动的元素必须是一个链接，有URL）。</li>
+<li><p>要使用dropEffect属性，必须在ondragenter事件处理程序中针对放置目标来设置它。</p>
+</li>
+<li><p>dropEffect 属性只有搭配effectAllowed 属性才有用。</p>
+</li>
+<li><p>effectAllowed 属性表示允许拖动元素的哪种dropEffect，effectAllowed 属性可能的值如下。<br>(1) “uninitialized”：没有给被拖动的元素设置任何放置行为。<br>(2) “none”：被拖动的元素不能有任何行为。<br>(3) “copy”：只允许值为”copy”的dropEffect。<br>(4) “link”：只允许值为”link”的dropEffect。<br>(5) “move”：只允许值为”move”的dropEffect。<br>(6) “copyLink”：允许值为”copy”和”link”的dropEffect。<br>(7) “copyMove”：允许值为”copy”和”move”的dropEffect。<br>(8) “linkMove”：允许值为”link”和”move”的dropEffect。<br>(9) “all”：允许任意dropEffect。</p>
+</li>
+<li><p>必须在ondragstart 事件处理程序中设置effectAllowed 属性。</p>
+</li>
+</ul>
+<blockquote>
+<p>2.5 可拖动</p>
+</blockquote>
+<ul>
+<li>HTML5 为所有HTML 元素规定了一个draggable 属性，表示元素是否可以拖动</li>
+<li>图像和链接的draggable属性自动被设置成了true，而其他元素这个属性的默认值都是false。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 让这个图像不可以拖动 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"smile.gif"</span> <span class="attr">draggable</span>=<span class="string">"false"</span> <span class="attr">alt</span>=<span class="string">"Smiley face"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 让这个元素可以拖动 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">draggable</span>=<span class="string">"true"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2.6 其他成员</p>
+</blockquote>
+<ul>
+<li>HTML5 规范规定dataTransfer 对象还应该包含下列方法和属性。<br>(1) addElement(element)：为拖动操作添加一个元素。添加这个元素只影响数据（即增加作为拖动源而响应回调的对象），不会影响拖动操作时页面元素的外观。<br>(2) clearData(format)：清除以特定格式保存的数据<br>(3) setDragImage(element, x, y)：指定一幅图像，当拖动发生时，显示在光标下方。<br>(4) types：当前保存的数据类型。这是一个类似数组的集合，以”text”这样的字符串形式保存着数据类型。</li>
+</ul>
+<blockquote>
+<p><strong>3、媒体元素</strong></p>
+</blockquote>
+<ul>
+<li>HTML5 新增了两个与媒体相关的标签<code>&lt;audio&gt;</code>和<code>&lt;video&gt;</code>。，让开发人员不必依赖任何插件就能在网页中嵌入跨浏览器的音频和视频内容。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 嵌入视频 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"conference.mpg"</span> <span class="attr">id</span>=<span class="string">"myVideo"</span>&gt;</span>Video player not available.<span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 嵌入音频 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"song.mp3"</span> <span class="attr">id</span>=<span class="string">"myAudio"</span>&gt;</span>Audio player not available.<span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>因为并非所有浏览器都支持所有媒体格式，所以可以指定多个不同的媒体来源。为此，不用在标签中指定src 属性，而是要像下面这样使用一或多个<code>&lt;source&gt;</code>元素。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 嵌入视频 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">"myVideo"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"conference.webm"</span> <span class="attr">type</span>=<span class="string">"video/webm; codecs='vp8, vorbis'"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"conference.ogv"</span> <span class="attr">type</span>=<span class="string">"video/ogg; codecs='theora, vorbis'"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"conference.mpg"</span>&gt;</span></span><br><span class="line">Video player not available.</span><br><span class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 嵌入音频 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">id</span>=<span class="string">"myAudio"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"song.ogg"</span> <span class="attr">type</span>=<span class="string">"audio/ogg"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"song.mp3"</span> <span class="attr">type</span>=<span class="string">"audio/mpeg"</span>&gt;</span></span><br><span class="line">Audio player not available.</span><br><span class="line"><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>3.1 属性</p>
+</blockquote>
+<ul>
+<li><code>&lt;video&gt;</code>和<code>&lt;audio&gt;</code>元素都提供了完善的JavaScript 接口。</li>
+<li>下表列出了这两个元素共有的属性，通过这些属性可以知道媒体的当前状态。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>数据类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>autoplay</td>
+<td>布尔值</td>
+<td>取得或设置autoplay标志</td>
+</tr>
+<tr>
+<td>buffered</td>
+<td>时间范围</td>
+<td>表示已下载的缓冲的时间范围的对象</td>
+</tr>
+<tr>
+<td>bufferedBytes</td>
+<td>字节范围</td>
+<td>表示已下载的缓冲的字节范围的对象</td>
+</tr>
+<tr>
+<td>bufferingRate</td>
+<td>整数</td>
+<td>下载过程中每秒钟平均接收到的位数</td>
+</tr>
+<tr>
+<td>bufferingThrottled</td>
+<td>布尔值</td>
+<td>表示浏览器是否对缓冲进行了节流</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>布尔值</td>
+<td>取得或设置controls属性，用于显示或隐藏浏览器内置的控件</td>
+</tr>
+<tr>
+<td>currentLoop</td>
+<td>整数</td>
+<td>媒体文件已经循环的次数</td>
+</tr>
+<tr>
+<td>currentSrc</td>
+<td>字符串</td>
+<td>当前播放的媒体文件的URL</td>
+</tr>
+<tr>
+<td>currentTime</td>
+<td>浮点数</td>
+<td>已经播放的秒数</td>
+</tr>
+<tr>
+<td>defaultPlaybackRate</td>
+<td>浮点数</td>
+<td>取得或设置默认的播放速度。默认值为1.0秒</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>浮点数</td>
+<td>媒体的总播放时间（秒数）</td>
+</tr>
+<tr>
+<td>ended</td>
+<td>布尔值</td>
+<td>表示媒体文件是否播放完成</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>布尔值</td>
+<td>取得或设置媒体文件在播放完成后是否再从头开始播放</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>布尔值</td>
+<td>取得或设置媒体文件是否静音</td>
+</tr>
+<tr>
+<td>networkState</td>
+<td>整数</td>
+<td>表示当前媒体的网络连接状态：0表示空，1表示正在加载，2表示正在加载元数据，3表示已经加载了第一帧，4表示加载完成</td>
+</tr>
+<tr>
+<td>paused</td>
+<td>布尔值</td>
+<td>表示播放器是否暂停</td>
+</tr>
+<tr>
+<td>playbackRate</td>
+<td>浮点数</td>
+<td>取得或设置当前的播放速度</td>
+</tr>
+<tr>
+<td>played</td>
+<td>时间范围</td>
+<td>到目前为止已经播放的时间范围</td>
+</tr>
+<tr>
+<td>readyState</td>
+<td>整数</td>
+<td>表示媒体是否已经就绪（可以播放了）。0表示数据不可用，1表示可以显示当前帧，2表示可以开始播放，3表示媒体可以从头到尾播放</td>
+</tr>
+<tr>
+<td>seekable</td>
+<td>时间范围</td>
+<td>可以搜索的时间范围</td>
+</tr>
+<tr>
+<td>seeking</td>
+<td>布尔值</td>
+<td>表示播放器是否正移动到媒体文件中的新位置</td>
+</tr>
+<tr>
+<td>src</td>
+<td>字符串</td>
+<td>媒体文件的来源。任何时候都可以重写这个属性</td>
+</tr>
+<tr>
+<td>start</td>
+<td>浮点数</td>
+<td>取得或设置媒体文件中开始播放的位置，以秒表示</td>
+</tr>
+<tr>
+<td>totalBytes</td>
+<td>整数</td>
+<td>当前资源所需的总字节数</td>
+</tr>
+<tr>
+<td>videoHeight</td>
+<td>整数</td>
+<td>返回视频（不一定是元素）的高度。只适用于<code>&lt;video&gt;</code></td>
+</tr>
+<tr>
+<td>videoWidth</td>
+<td>整数</td>
+<td>返回视频（不一定是元素）的宽度。只适用于<code>&lt;video&gt;</code></td>
+</tr>
+<tr>
+<td>volume</td>
+<td>浮点数</td>
+<td>取得或设置当前音量，值为0.0到1.0</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>3.2 事件</p>
+</blockquote>
+<ul>
+<li>除了大量属性之外，这两个媒体元素还可以触发很多事件。下表列出了媒体元素相关的事件。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>触发时机</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abort</td>
+<td>下载中断</td>
+</tr>
+<tr>
+<td>canplay</td>
+<td>可以播放时；readyState值为2</td>
+</tr>
+<tr>
+<td>canplaythrough</td>
+<td>播放可继续，而且应该不会中断；readyState值为3</td>
+</tr>
+<tr>
+<td>canshowcurrentframe</td>
+<td>当前帧已经下载完成；readyState值为1</td>
+</tr>
+<tr>
+<td>dataunavailable</td>
+<td>因为没有数据而不能播放；readyState值为0</td>
+</tr>
+<tr>
+<td>durationchange</td>
+<td>duration属性的值改变</td>
+</tr>
+<tr>
+<td>emptied</td>
+<td>网络连接关闭</td>
+</tr>
+<tr>
+<td>empty</td>
+<td>发生错误阻止了媒体下载</td>
+</tr>
+<tr>
+<td>ended</td>
+<td>媒体已播放到末尾，播放停止</td>
+</tr>
+<tr>
+<td>error</td>
+<td>下载期间发生网络错误</td>
+</tr>
+<tr>
+<td>loadeddata</td>
+<td>媒体的第一帧已加载完成</td>
+</tr>
+<tr>
+<td>loadedmetadata</td>
+<td>媒体的元数据已加载完成</td>
+</tr>
+<tr>
+<td>loadstart</td>
+<td>下载已开始</td>
+</tr>
+<tr>
+<td>pause</td>
+<td>播放已暂停</td>
+</tr>
+<tr>
+<td>play</td>
+<td>媒体已接收到指令开始播放</td>
+</tr>
+<tr>
+<td>playing</td>
+<td>媒体已实际开始播放</td>
+</tr>
+<tr>
+<td>progress</td>
+<td>正在下载</td>
+</tr>
+<tr>
+<td>ratechange</td>
+<td>播放媒体的速度改变</td>
+</tr>
+<tr>
+<td>seeked</td>
+<td>搜索结束</td>
+</tr>
+<tr>
+<td>seeking</td>
+<td>正移动到新位置</td>
+</tr>
+<tr>
+<td>stalled</td>
+<td>浏览器尝试下载，但未接收到数据</td>
+</tr>
+<tr>
+<td>timeupdate</td>
+<td>currentTime被以不合理或意外的方式更新</td>
+</tr>
+<tr>
+<td>volumechange</td>
+<td>volume属性值或muted属性值已改变</td>
+</tr>
+<tr>
+<td>waiting</td>
+<td>播放暂停，等待下载更多数据</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>3.3 自定义媒体播放器</p>
+</blockquote>
+<ul>
+<li>使用<audio>和<video>元素的play()和pause()方法，可以手工控制媒体文件的播放。</video></audio></li>
+<li>组合使用属性、事件和这两个方法，很容易创建一个自定义的媒体播放器。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mediaplayer"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"video"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">video</span> <span class="attr">id</span>=<span class="string">"player"</span> <span class="attr">src</span>=<span class="string">"movie.mov"</span> <span class="attr">poster</span>=<span class="string">"mymovie.jpg"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">width</span>=<span class="string">"300"</span> <span class="attr">height</span>=<span class="string">"200"</span>&gt;</span></span><br><span class="line">        Video player not available.</span><br><span class="line">        <span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"controls"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"Play"</span> <span class="attr">id</span>=<span class="string">"video-btn"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"curtime"</span>&gt;</span>0<span class="tag">&lt;/<span class="name">span</span>&gt;</span>/<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"duration"</span>&gt;</span>0<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//取得元素的引用</span></span><br><span class="line"><span class="keyword">var</span> player = <span class="built_in">document</span>.getElementById(<span class="string">"player"</span>),</span><br><span class="line">btn = <span class="built_in">document</span>.getElementById(<span class="string">"video-btn"</span>),</span><br><span class="line">curtime = <span class="built_in">document</span>.getElementById(<span class="string">"curtime"</span>),</span><br><span class="line">duration = <span class="built_in">document</span>.getElementById(<span class="string">"duration"</span>);</span><br><span class="line"><span class="comment">//更新播放时间</span></span><br><span class="line">duration.innerHTML = player.duration;</span><br><span class="line"><span class="comment">//为按钮添加事件处理程序</span></span><br><span class="line"><span class="keyword">var</span> EventUtil = &#123;</span><br><span class="line">addHander:<span class="function"><span class="keyword">function</span>(<span class="params">element,type,handler</span>)</span></span><br><span class="line"><span class="function">    <span class="title">if</span>(<span class="params">element.addEventListener</span>)</span>&#123;</span><br><span class="line">        element.addEventListener(type,handler,<span class="literal">false</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element.attachEvent)&#123;</span><br><span class="line">        element.attachEvent(<span class="string">"on"</span>+type,handler,<span class="literal">false</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        element[<span class="string">"on"</span>+type] = handler;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">EventUtil.addHandler(btn, <span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (player.paused)&#123;</span><br><span class="line">        player.play();</span><br><span class="line">        btn.value = <span class="string">"Pause"</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        player.pause();</span><br><span class="line">        btn.value = <span class="string">"Play"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//定时更新当前时间</span></span><br><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    curtime.innerHTML = player.currentTime;</span><br><span class="line">&#125;, <span class="number">250</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>3.4 检测编码解码支持情况</p>
+</blockquote>
+<ul>
+<li>两个媒体元素都有一个canPlayType()方法，该方法接收一种格式/编解码器字符串，返回”probably”、”maybe”或””（ 空字符串）。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> audio = <span class="built_in">document</span>.getElementById(<span class="string">"audio-player"</span>);</span><br><span class="line"><span class="comment">//很可能"maybe"</span></span><br><span class="line"><span class="keyword">if</span> (audio.canPlayType(<span class="string">"audio/mpeg"</span>))&#123;</span><br><span class="line"><span class="comment">//进一步处理</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//可能是"probably"</span></span><br><span class="line"><span class="keyword">if</span> (audio.canPlayType(<span class="string">"audio/ogg; codecs=\"vorbis\""</span>))&#123;</span><br></pre></td></tr></table></figure>
+<p><img src="http://static.zybuluo.com/meggie/rwh7a9u425nfdylw81xkwnkj/image_1c2tl13n61khbehud3m1nlp17iq9.png" alt="已得到支持的音频格式和编解码器。"><br><img src="http://static.zybuluo.com/meggie/j0we9swkl7ozf6qe55gfhrcm/image_1c2tl2edb1d7cucq13fhirgc9dm.png" alt="已得到支持的音频格式和编解码器"></p>
+<blockquote>
+<p>3.5 Audio 类型</p>
+</blockquote>
+<ul>
+<li><code>&lt;audio&gt;</code>元素还有一个原生的JavaScript构造函数Audio，可以在任何时候播放音频。</li>
+<li>Audio 与Image 很相似，但Audio 不用像Image那样必须插入到文档中。只要创建一<br>个新实例，并传入音频源文件即可。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> audio = <span class="keyword">new</span> Audio(<span class="string">"sound.mp3"</span>);</span><br><span class="line">EventUtil.addHandler(audio, <span class="string">"canplaythrough"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    audio.play();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建新的Audio 实例即可开始下载指定的文件。下载完成后，调用play()就可以播放音频。</li>
+</ul>
+<blockquote>
+<p>4、历史状态管理</p>
+</blockquote>
+<ul>
+<li>HTML5 新增了hashchange事件，以便在URL的参数列表（及URL中“#”号后面的所有字符串）发生变化时通知开发人员。</li>
+<li>HTML5 通过更新history 对象为管理历史状态提供了方便</li>
+<li>通过hashchange 事件，可以知道URL的参数什么时候发生了变化，即什么时候该有所反应。</li>
+<li>通过状态管理API ， 能够在不加载新页面的情况下改变浏览器的URL 。</li>
+<li>使用history.pushState()方法，该方法可以接收三个参数：状态对象、新状态的标题和可选的相对URL。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history.pushState(&#123;<span class="attr">name</span>:<span class="string">"Nicholas"</span>&#125;, <span class="string">"Nicholas' page"</span>, <span class="string">"nicholas.html"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>要更新当前状态，可以调用replaceState()，传入的参数与pushState()的前两个参数相同。调用这个方法不会在历史状态栈中创建新状态，只会重写当前状态。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history.replaceState(&#123;<span class="attr">name</span>:<span class="string">"Greg"</span>&#125;, <span class="string">"Greg's page"</span>);</span><br></pre></td></tr></table></figure>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年01月04日 17:13</p>
+        <p>原始链接： <a class="post-url" href="/shanruopeng.github.io/2018/01/04/HTML5 脚本编程/" title="javascript-html5 脚本编程">http://shanruopeng.github.io/shanruopeng.github.io/2018/01/04/HTML5 脚本编程/</a></p>
+        <footer>
+            <a href="http://shanruopeng.github.io/shanruopeng.github.io">
+                <img src="/shanruopeng.github.io/images/logo.png" alt="Shanruo Peng">
+                Shanruo Peng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://shanruopeng.github.io/shanruopeng.github.io/2018/01/04/HTML5 脚本编程/&title=《javascript-html5 脚本编程》 — Shanruo's Blog&pic=/images/img4.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://shanruopeng.github.io/shanruopeng.github.io/2018/01/04/HTML5 脚本编程/&title=《javascript-html5 脚本编程》 — Shanruo's Blog&source=不积跬步，无以至千里；不积小流，无以成江海。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://shanruopeng.github.io/shanruopeng.github.io/2018/01/04/HTML5 脚本编程/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《javascript-html5 脚本编程》 — Shanruo's Blog&url=http://shanruopeng.github.io/shanruopeng.github.io/2018/01/04/HTML5 脚本编程/&via=http://shanruopeng.github.io/shanruopeng.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://shanruopeng.github.io/shanruopeng.github.io/2018/01/04/HTML5 脚本编程/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://shanruopeng.github.io/shanruopeng.github.io/2018/01/04/HTML5 脚本编程/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" class="color2">javascript高级程序设计</a>
+      
+    <a href="/shanruopeng.github.io/tags/前端基础/" class="color5">前端基础</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/shanruopeng.github.io/2018/01/05/错误处理和调试/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          javascript-错误处理和调试
+        
+      </span>
+    </a>
+  
+  
+    <a href="/shanruopeng.github.io/2017/12/22/Canvas绘图详解/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">javascript-Canvas绘图详解</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Shanruo Peng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://shanruopeng.github.io/shanruopeng.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/shanruopeng.github.io/categories/Photoshop/">Photoshop</a><a class="category-link" href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/shanruopeng.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/archives">
+                    <i class="fa fa-archive"></i><span>归档</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="/shanruopeng.github.io/404.html">
+                    <i class="fa fa-heartbeat"></i><span>公益404</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/shanruopeng.github.io/js/search.js"></script>
+<script src="/shanruopeng.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/shanruopeng.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/shanruopeng.github.io/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>javascript-DOM-节点层次-Text类型&amp;Comment类型 | Shanruo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Shanruo,Shanruo's Blog">
+  
+  <meta name="description" content="Text类型   文本节点由Text 类型表示，包含的是可以照字面解释的纯文本内容。纯文本中可以包含转义后的HTML 字符，但不能包含HTML 代码。 Text 节点具有以下特征：  nodeType 的值为3； nodeName 的值为”#text”； nodeValue 的值为节点所包含的文本； parentNode 是一个Element； 不支持（没有）子节点。   可以通过nodeVal">
+<meta name="keywords" content="javascript高级程序设计,前端基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-DOM-节点层次-Text类型&amp;Comment类型">
+<meta property="og:url" content="http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/DOM-节点层次-Text类型&Comment类型/index.html">
+<meta property="og:site_name" content="Shanruo&#39;s Blog">
+<meta property="og:description" content="Text类型   文本节点由Text 类型表示，包含的是可以照字面解释的纯文本内容。纯文本中可以包含转义后的HTML 字符，但不能包含HTML 代码。 Text 节点具有以下特征：  nodeType 的值为3； nodeName 的值为”#text”； nodeValue 的值为节点所包含的文本； parentNode 是一个Element； 不支持（没有）子节点。   可以通过nodeVal">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:updated_time" content="2018-12-04T12:13:54.351Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript-DOM-节点层次-Text类型&amp;Comment类型">
+<meta name="twitter:description" content="Text类型   文本节点由Text 类型表示，包含的是可以照字面解释的纯文本内容。纯文本中可以包含转义后的HTML 字符，但不能包含HTML 代码。 Text 节点具有以下特征：  nodeType 的值为3； nodeName 的值为”#text”； nodeValue 的值为节点所包含的文本； parentNode 是一个Element； 不支持（没有）子节点。   可以通过nodeVal">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/shanruopeng.github.io/css/style.css">
+  <script src="/shanruopeng.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/shanruopeng.github.io/" class="left">
+                    <span class="site-title">Shanruo&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/shanruopeng.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>归档</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                    <a target="_blank" href="/shanruopeng.github.io/404.html">
+                        <i class="fa fa-heartbeat"></i>
+                        <span>公益404</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/shanruopeng.github.io/">
+                    <img src="/shanruopeng.github.io/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Shanruo&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        业精于勤荒于嬉,行成于思毁于随。
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Shanruo" target="_blank" href="//pengyanyan.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/shanruopeng">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="991526442" "="">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="meggie523" "="">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-DOM-节点层次-Text类型&amp;Comment类型" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      javascript-DOM-节点层次-Text类型&amp;Comment类型
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-11-30
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <blockquote>
+<p><strong>Text类型</strong></p>
+</blockquote>
+<ul>
+<li>文本节点由Text 类型表示，包含的是可以照字面解释的纯文本内容。纯文本中可以包含转义后的HTML 字符，但不能包含HTML 代码。</li>
+<li><p>Text 节点具有以下特征：</p>
+<ul>
+<li>nodeType 的值为3；</li>
+<li>nodeName 的值为”#text”；</li>
+<li>nodeValue 的值为节点所包含的文本；</li>
+<li>parentNode 是一个Element；</li>
+<li>不支持（没有）子节点。</li>
+</ul>
+</li>
+<li><p>可以通过nodeValue 属性或data属性访问Text节点中包含的文本，这两个属性中包含的值相同。</p>
+</li>
+<li><p>使用下列方法可以操作节点中的文本。</p>
+<ul>
+<li><code>appendData(text)</code>：将text 添加到节点的末尾。</li>
+<li><code>deleteData(offset, count)</code>：从offset 指定的位置开始删除count 个字符。</li>
+<li><code>insertData(offset, text)</code>：在offset 指定的位置插入text。</li>
+<li><code>replaceData(offset,count,text)</code>：用text替换从offset指定的位置开始到offset+count 为止处的文本。</li>
+<li><code>splitText(offset)</code>：从offset 指定的位置将当前文本节点分成两个文本节点。</li>
+<li><code>substringData(offset, count)</code>：提取从offset 指定的位置开始到offset+count 为止处的字符串。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 没有内容，也就没有文本节点 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 有空格，因而有一个文本节点 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 有内容，因而有一个文本节点--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello World!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> textNode = div.firstChild; <span class="comment">//或者div.childNodes[0]</span></span><br><span class="line">div.firstChild.nodeValue = <span class="string">"Some other message"</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1、创建文本节点</p>
+</blockquote>
+<ul>
+<li>使用document.createTextNode()创建新文本节点，这个方法接受一个参数——要插入节点<br>中的文本。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> textNode = <span class="built_in">document</span>.createTextNode(<span class="string">"&lt;strong&gt;Hello&lt;/strong&gt; world!"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>除非把新节点添加到文档树中已经存在的节点中，否则我们不会在浏览器窗口中看到新节点。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个&lt;div&gt;元素并向其中添加一条消息。</span></span><br><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line">element.className = <span class="string">"message"</span>;</span><br><span class="line"><span class="keyword">var</span> textNode = <span class="built_in">document</span>.createTextNode(<span class="string">"Hello world!"</span>);</span><br><span class="line">element.appendChild(textNode);</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(element);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2、规范化文本节点</p>
+</blockquote>
+<ul>
+<li><code>normalize()</code>是能够将相邻文本节点合并的方法</li>
+<li>如果在一个包含两个或多个文本节点的父元素上调用normalize()方法，则会将所有文本节点合并成一个节点，结果节点的nodeValue等于将合并前每个文本节点的nodeValue值拼接起来的值。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line">element.className = <span class="string">"message"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> textNode = <span class="built_in">document</span>.createTextNode(<span class="string">"Hello world!"</span>);</span><br><span class="line">element.appendChild(textNode);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> anotherTextNode = <span class="built_in">document</span>.createTextNode(<span class="string">"Yippee!"</span>);</span><br><span class="line">element.appendChild(anotherTextNode);</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.body.appendChild(element);</span><br><span class="line"></span><br><span class="line">alert(element.childNodes.length); <span class="comment">//2</span></span><br><span class="line"></span><br><span class="line">element.normalize();</span><br><span class="line">alert(element.childNodes.length); <span class="comment">//1</span></span><br><span class="line">alert(element.firstChild.nodeValue); <span class="comment">// "Hello world!Yippee!"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>3、分割文本节点</p>
+</blockquote>
+<ul>
+<li><code>splitText()</code>方法会将一个文本节点分成两个文本节点，即按照指定的位置分割nodeValue 值。</li>
+<li>原来的文本节点将包含从开始到指定位置之前的内容，新文本节点将包含剩下的文本。这个方法会返回一个新文本节点，该节点与原节点的parentNode 相同。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line">element.className = <span class="string">"message"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> textNode = <span class="built_in">document</span>.createTextNode(<span class="string">"Hello world!"</span>);</span><br><span class="line">element.appendChild(textNode);</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.body.appendChild(element);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> newNode = element.firstChild.splitText(<span class="number">5</span>);</span><br><span class="line">alert(element.firstChild.nodeValue); <span class="comment">//"Hello"</span></span><br><span class="line">alert(newNode.nodeValue); <span class="comment">//" world!"</span></span><br><span class="line">alert(element.childNodes.length); <span class="comment">//2</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>分割文本节点是从文本节点中提取数据的一种常用DOM 解析技术。</li>
+</ul>
+<blockquote>
+<p><strong>Comment类型</strong></p>
+</blockquote>
+<ul>
+<li><p>注释在DOM中是通过Comment 类型来表示的。Comment 节点具有下列特征：</p>
+<ul>
+<li>nodeType 的值为8；</li>
+<li>nodeName 的值为”#comment”；</li>
+<li>nodeValue 的值是注释的内容；</li>
+<li>parentNode 可能是Document 或Element；</li>
+<li>不支持（没有）子节点。</li>
+</ul>
+</li>
+<li><p>Comment 类型与Text 类型继承自相同的基类，因此它拥有除splitText()之外的所有字符串操作方法。</p>
+</li>
+<li>可以通过nodeValue 或data属性来取得注释的内容。注释节点可以通过其父节点来访问。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myDiv"</span>&gt;</span><span class="comment">&lt;!--A comment --&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</span><br><span class="line"><span class="keyword">var</span> comment = div.firstChild;</span><br><span class="line">alert(comment.data); <span class="comment">//"A comment"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用document.createComment()并为其传递注释文本也可以创建注释节点。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> comment = <span class="built_in">document</span>.createComment(<span class="string">"A comment "</span>);</span><br></pre></td></tr></table></figure>
+<p>-如果要访问注释节点，一定要保证它们是<html>元素的后代。</html></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2018年12月04日 20:13</p>
+        <p>原始链接： <a class="post-url" href="/shanruopeng.github.io/2017/11/30/DOM-节点层次-Text类型&Comment类型/" title="javascript-DOM-节点层次-Text类型&amp;Comment类型">http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/DOM-节点层次-Text类型&amp;Comment类型/</a></p>
+        <footer>
+            <a href="http://shanruopeng.github.io/shanruopeng.github.io">
+                <img src="/shanruopeng.github.io/images/logo.png" alt="Shanruo Peng">
+                Shanruo Peng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/DOM-节点层次-Text类型&Comment类型/&title=《javascript-DOM-节点层次-Text类型&Comment类型》 — Shanruo's Blog&pic=/images/img7.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/DOM-节点层次-Text类型&Comment类型/&title=《javascript-DOM-节点层次-Text类型&Comment类型》 — Shanruo's Blog&source=不积跬步，无以至千里；不积小流，无以成江海。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/DOM-节点层次-Text类型&Comment类型/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《javascript-DOM-节点层次-Text类型&Comment类型》 — Shanruo's Blog&url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/DOM-节点层次-Text类型&Comment类型/&via=http://shanruopeng.github.io/shanruopeng.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/DOM-节点层次-Text类型&Comment类型/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/DOM-节点层次-Text类型&Comment类型/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" class="color2">javascript高级程序设计</a>
+      
+    <a href="/shanruopeng.github.io/tags/前端基础/" class="color5">前端基础</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/shanruopeng.github.io/2017/12/01/DOM-节点层次-DocumentType类型&DocumentFragment类型&Attr类型/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          javascript-DOM-节点层次-DocumentType类型&amp;DocumentFragment类型&amp;Attr类型
+        
+      </span>
+    </a>
+  
+  
+    <a href="/shanruopeng.github.io/2017/11/30/DOM-节点层次-Element类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">javascript-DOM-节点层次-Element类型</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Shanruo Peng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://shanruopeng.github.io/shanruopeng.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/shanruopeng.github.io/categories/Photoshop/">Photoshop</a><a class="category-link" href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/shanruopeng.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/archives">
+                    <i class="fa fa-archive"></i><span>归档</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="/shanruopeng.github.io/404.html">
+                    <i class="fa fa-heartbeat"></i><span>公益404</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/shanruopeng.github.io/js/search.js"></script>
+<script src="/shanruopeng.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/shanruopeng.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/shanruopeng.github.io/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

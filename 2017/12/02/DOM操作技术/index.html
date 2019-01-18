@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>javascript-DOM操作技术 | Shanruo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Shanruo,Shanruo's Blog">
+  
+  <meta name="description" content="动态脚本   使用&amp;lt;script&amp;gt;元素可以向页面中插入JavaScript代码，一种方式是通过其src特性包含外部文件，另一种方式就是用这个元素本身来包含代码 动态脚本，指的是在页面加载时不存在，但将来的某一时刻通过修改DOM 动态添加的脚本。 创建动态脚本也有两种方式：插入外部文件和直接插入JavaScript 代码。 动态加载的外部JavaScript 文件能够立即运行。  1&amp;">
+<meta name="keywords" content="javascript高级程序设计,前端基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-DOM操作技术">
+<meta property="og:url" content="http://shanruopeng.github.io/shanruopeng.github.io/2017/12/02/DOM操作技术/index.html">
+<meta property="og:site_name" content="Shanruo&#39;s Blog">
+<meta property="og:description" content="动态脚本   使用&amp;lt;script&amp;gt;元素可以向页面中插入JavaScript代码，一种方式是通过其src特性包含外部文件，另一种方式就是用这个元素本身来包含代码 动态脚本，指的是在页面加载时不存在，但将来的某一时刻通过修改DOM 动态添加的脚本。 创建动态脚本也有两种方式：插入外部文件和直接插入JavaScript 代码。 动态加载的外部JavaScript 文件能够立即运行。  1&amp;">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:updated_time" content="2017-12-01T09:22:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript-DOM操作技术">
+<meta name="twitter:description" content="动态脚本   使用&amp;lt;script&amp;gt;元素可以向页面中插入JavaScript代码，一种方式是通过其src特性包含外部文件，另一种方式就是用这个元素本身来包含代码 动态脚本，指的是在页面加载时不存在，但将来的某一时刻通过修改DOM 动态添加的脚本。 创建动态脚本也有两种方式：插入外部文件和直接插入JavaScript 代码。 动态加载的外部JavaScript 文件能够立即运行。  1&amp;">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/shanruopeng.github.io/css/style.css">
+  <script src="/shanruopeng.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/shanruopeng.github.io/" class="left">
+                    <span class="site-title">Shanruo&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/shanruopeng.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>归档</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                    <a target="_blank" href="/shanruopeng.github.io/404.html">
+                        <i class="fa fa-heartbeat"></i>
+                        <span>公益404</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/shanruopeng.github.io/">
+                    <img src="/shanruopeng.github.io/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Shanruo&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        业精于勤荒于嬉,行成于思毁于随。
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Shanruo" target="_blank" href="//pengyanyan.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/shanruopeng">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="991526442" "="">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="meggie523" "="">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-DOM操作技术" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      javascript-DOM操作技术
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-12-01
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <blockquote>
+<p><strong>动态脚本</strong></p>
+</blockquote>
+<ul>
+<li>使用<code>&lt;script&gt;</code>元素可以向页面中插入JavaScript代码，一种方式是通过其src特性包含外部文件，另一种方式就是用这个元素本身来包含代码</li>
+<li>动态脚本，指的是在页面加载时不存在，但将来的某一时刻通过修改DOM 动态添加的脚本。</li>
+<li>创建动态脚本也有两种方式：插入外部文件和直接插入JavaScript 代码。</li>
+<li>动态加载的外部JavaScript 文件能够立即运行。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"client.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建这个节点的DOM 代码</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">    script.src = url;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(script);</span><br><span class="line">&#125;</span><br><span class="line">loadScript(<span class="string">"client.js"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>另一种指定JavaScript 代码的方式是行内方式。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">"hi"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadScriptString</span>(<span class="params">code</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    script.type = <span class="string">"text/javascript"</span>;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        script.appendChild(<span class="built_in">document</span>.createTextNode(code));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ex)&#123;</span><br><span class="line">        <span class="comment">//针对IE</span></span><br><span class="line">        script.text = code;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(script);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">loadScriptString(<span class="string">"function sayHi()&#123;alert('hi');&#125;"</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>动态样式</strong></p>
+</blockquote>
+<ul>
+<li>能够把CSS 样式包含到HTML页面中的元素有两个。其中，<code>&lt;link&gt;</code>元素用于包含来自外部的文件，而<code>&lt;style&gt;</code>元素用于指定嵌入的样式。</li>
+<li>动态样式是指在页面刚加载时不存在的样式；动态样式是在页面加载完成后动态添加到页面中的。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"styles.css"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用DOM 代码可以很容易地动态创建出这个元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadStyles</span>(<span class="params">url</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> link = <span class="built_in">document</span>.createElement(<span class="string">"link"</span>);</span><br><span class="line">    link.rel = <span class="string">"stylesheet"</span>;</span><br><span class="line">    link.type = <span class="string">"text/css"</span>;</span><br><span class="line">    link.href = url;</span><br><span class="line">    <span class="keyword">var</span> head = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>];</span><br><span class="line">    head.appendChild(link);</span><br><span class="line">&#125;</span><br><span class="line">loadStyles(<span class="string">"styles.css"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>另一种定义样式的方式是使用<code>&lt;style&gt;</code>元素来包含嵌入式CSS.</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">body &#123;</span></span><br><span class="line"><span class="undefined">    background-color: red;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadStyleString</span>(<span class="params">css</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> style = <span class="built_in">document</span>.createElement(<span class="string">"style"</span>);</span><br><span class="line">    style.type = <span class="string">"text/css"</span>;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        style.appendChild(<span class="built_in">document</span>.createTextNode(css));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ex)&#123;</span><br><span class="line">        <span class="comment">//针对IE</span></span><br><span class="line">        style.styleSheet.cssText = css;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> head = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"head"</span>)[<span class="number">0</span>];</span><br><span class="line">    head.appendChild(style);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">loadStyleString(<span class="string">"body&#123;background-color:red&#125;"</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>操作表格</strong></p>
+</blockquote>
+<ul>
+<li>为了方便构建表格，HTML DOM为<code>&lt;table&gt;</code>、<code>&lt;tbody&gt;</code>和<code>&lt;tr&gt;</code>元素添加了一些属性和方法。</li>
+<li>为<code>&lt;table&gt;</code>元素添加的属性和方法如下。<ul>
+<li>caption：保存着对<code>&lt;caption&gt;</code>元素（如果有）的指针。</li>
+<li>tBodies：是一个<code>&lt;tbody&gt;</code>元素的HTMLCollection。</li>
+<li>tFoot：保存着对<code>&lt;tfoot&gt;</code>元素（如果有）的指针。</li>
+<li>tHead：保存着对<code>&lt;thead&gt;</code>元素（如果有）的指针。</li>
+<li>rows：是一个表格中所有行的HTMLCollection。</li>
+<li>createTHead()：创建<code>&lt;thead&gt;</code>元素，将其放到表格中，返回引用。</li>
+<li>createTFoot()：创建<code>&lt;tfoot&gt;</code>元素，将其放到表格中，返回引用。</li>
+<li>createCaption()：创建<code>&lt;caption&gt;</code>元素，将其放到表格中，返回引用。</li>
+<li>deleteTHead()：删除<code>&lt;thead&gt;</code>元素。</li>
+<li>deleteTFoot()：删除<code>&lt;tfoot&gt;</code>元素。</li>
+<li>deleteCaption()：删除<code>&lt;caption&gt;</code>元素。</li>
+<li>deleteRow(pos)：删除指定位置的行。</li>
+<li>insertRow(pos)：向rows 集合中的指定位置插入一行。</li>
+</ul>
+</li>
+<li>为<code>&lt;tbody&gt;</code>元素添加的属性和方法如下。<ul>
+<li>rows：保存着<code>&lt;tbody&gt;</code>元素中行的HTMLCollection。</li>
+<li>deleteRow(pos)：删除指定位置的行。</li>
+<li>insertRow(pos)：向rows 集合中的指定位置插入一行，返回对新插入行的引用。</li>
+</ul>
+</li>
+<li><p>为<code>&lt;tr&gt;</code>元素添加的属性和方法如下。</p>
+<ul>
+<li>cells：保存着<code>&lt;tr&gt;</code>元素中单元格的HTMLCollection。</li>
+<li>deleteCell(pos)：删除指定位置的单元格。</li>
+<li>insertCell(pos)：向cells集合中的指定位置插入一个单元格，返回对新插入单元格的引用。</li>
+</ul>
+</li>
+<li><p>使用DOM创建HTML表格</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">border</span>=<span class="string">"1"</span> <span class="attr">width</span>=<span class="string">"100%"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>Cell 1,1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>Cell 2,1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>Cell 1,2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span>&gt;</span>Cell 2,2<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建table</span></span><br><span class="line"><span class="keyword">var</span> table = <span class="built_in">document</span>.createElement(<span class="string">"table"</span>);</span><br><span class="line">table.border = <span class="number">1</span>;</span><br><span class="line">table.width = <span class="string">"100%"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建tbody</span></span><br><span class="line"><span class="keyword">var</span> tbody = <span class="built_in">document</span>.createElement(<span class="string">"tbody"</span>);</span><br><span class="line">table.appendChild(tbody);</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建第一行</span></span><br><span class="line">tbody.insertRow(<span class="number">0</span>);</span><br><span class="line">tbody.rows[<span class="number">0</span>].insertCell(<span class="number">0</span>);</span><br><span class="line">tbody.rows[<span class="number">0</span>].cells[<span class="number">0</span>].appendChild(<span class="built_in">document</span>.createTextNode(<span class="string">"Cell 1,1"</span>));</span><br><span class="line">tbody.rows[<span class="number">0</span>].insertCell(<span class="number">1</span>);</span><br><span class="line">tbody.rows[<span class="number">0</span>].cells[<span class="number">1</span>].appendChild(<span class="built_in">document</span>.createTextNode(<span class="string">"Cell 2,1"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//创建第二行</span></span><br><span class="line">tbody.insertRow(<span class="number">1</span>);</span><br><span class="line">tbody.rows[<span class="number">1</span>].insertCell(<span class="number">0</span>);</span><br><span class="line">tbody.rows[<span class="number">1</span>].cells[<span class="number">0</span>].appendChild(<span class="built_in">document</span>.createTextNode(<span class="string">"Cell 1,2"</span>));</span><br><span class="line">tbody.rows[<span class="number">1</span>].insertCell(<span class="number">1</span>);</span><br><span class="line">tbody.rows[<span class="number">1</span>].cells[<span class="number">1</span>].appendChild(<span class="built_in">document</span>.createTextNode(<span class="string">"Cell 2,2"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">//将表格添加到文档主体中</span></span><br><span class="line"><span class="built_in">document</span>.body.appendChild(table);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>使用NodeList</strong></p>
+</blockquote>
+<ul>
+<li>从本质上说，所有NodeList 对象都是在访问DOM文档时实时运行的查询。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//下列代码会导致无限循环</span></span><br><span class="line"><span class="keyword">var</span> divs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"div"</span>),</span><br><span class="line">i,</span><br><span class="line">div;</span><br><span class="line"><span class="keyword">for</span> (i=<span class="number">0</span>; i &lt; divs.length; i++)&#123;</span><br><span class="line">    div = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(div);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>要迭代一个NodeList，最好是使用length 属性初始化第二个变量，然后将迭代器与该变<br>量进行比较。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> divs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"div"</span>),</span><br><span class="line">i,</span><br><span class="line">len,</span><br><span class="line">div;</span><br><span class="line"><span class="keyword">for</span> (i=<span class="number">0</span>, len=divs.length; i &lt; len; i++)&#123;</span><br><span class="line">    div = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(div);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>一般来说，应该尽量减少访问NodeList的次数。因为每次访问NodeList，都会运行一次基于文档的查询。所以，可以考虑将从NodeList 中取得的值缓存起来。</li>
+</ul>
+<blockquote>
+<p><strong>DOM小结</strong></p>
+</blockquote>
+<ul>
+<li>DOM是语言中立的API，用于访问和操作HTML 和XML 文档。</li>
+<li>DOM1 级将HTML 和XML 文档形象地看作一个层次化的节点树，可以使用JavaScript 来操作这个节点树，进而改变底层文档的外观和结构。</li>
+</ul>
+<hr>
+<ul>
+<li>DOM 由各种节点构成<ul>
+<li>最基本的节点类型是Node，用于抽象地表示文档中一个独立的部分；所有其他类型都继承自Node。</li>
+<li>Document 类型表示整个文档，是一组分层节点的根节点。在JavaScript中，document 对象是Document 的一个实例。使用document 对象，有很多种方式可以查询和取得节点。</li>
+<li>Element 节点表示文档中的所有HTML或XML元素，可以用来操作这些元素的内容和特性。</li>
+<li>另外还有一些节点类型，分别表示文本内容、注释、文档类型、CDATA区域和文档片段。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>访问DOM 的操作在多数情况下都很直观，不过在处理<code>&lt;script&gt;</code>和<code>&lt;style&gt;</code>元素时还是存在一些复杂性。</li>
+<li>由于这两个元素分别包含脚本和样式信息，因此浏览器通常会将它们与其他元素区别对待。这些区别导致了在针对这些元素使用innerHTML 时，以及在创建新元素时的一些问题。</li>
+</ul>
+<hr>
+<ul>
+<li>理解DOM的关键，就是理解DOM 对性能的影响。</li>
+<li>DOM操作往往是JavaScript程序中开销最大的部分，而因访问NodeList导致的问题为最多。</li>
+<li>NodeList 对象都是“动态的”，这就意味着每次访问NodeList对象，都会运行一次查询。有鉴于此，最好的办法就是尽量减少DOM操作。</li>
+</ul>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年12月01日 17:22</p>
+        <p>原始链接： <a class="post-url" href="/shanruopeng.github.io/2017/12/02/DOM操作技术/" title="javascript-DOM操作技术">http://shanruopeng.github.io/shanruopeng.github.io/2017/12/02/DOM操作技术/</a></p>
+        <footer>
+            <a href="http://shanruopeng.github.io/shanruopeng.github.io">
+                <img src="/shanruopeng.github.io/images/logo.png" alt="Shanruo Peng">
+                Shanruo Peng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/12/02/DOM操作技术/&title=《javascript-DOM操作技术》 — Shanruo's Blog&pic=/images/img9.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/12/02/DOM操作技术/&title=《javascript-DOM操作技术》 — Shanruo's Blog&source=不积跬步，无以至千里；不积小流，无以成江海。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://shanruopeng.github.io/shanruopeng.github.io/2017/12/02/DOM操作技术/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《javascript-DOM操作技术》 — Shanruo's Blog&url=http://shanruopeng.github.io/shanruopeng.github.io/2017/12/02/DOM操作技术/&via=http://shanruopeng.github.io/shanruopeng.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/12/02/DOM操作技术/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://shanruopeng.github.io/shanruopeng.github.io/2017/12/02/DOM操作技术/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" class="color2">javascript高级程序设计</a>
+      
+    <a href="/shanruopeng.github.io/tags/前端基础/" class="color5">前端基础</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/shanruopeng.github.io/2017/12/08/DOM 扩展/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          javascript-DOM扩展
+        
+      </span>
+    </a>
+  
+  
+    <a href="/shanruopeng.github.io/2017/12/01/DOM-节点层次-DocumentType类型&DocumentFragment类型&Attr类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">javascript-DOM-节点层次-DocumentType类型&amp;DocumentFragment类型&amp;Attr类型</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Shanruo Peng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://shanruopeng.github.io/shanruopeng.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/shanruopeng.github.io/categories/Photoshop/">Photoshop</a><a class="category-link" href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/shanruopeng.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/archives">
+                    <i class="fa fa-archive"></i><span>归档</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="/shanruopeng.github.io/404.html">
+                    <i class="fa fa-heartbeat"></i><span>公益404</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/shanruopeng.github.io/js/search.js"></script>
+<script src="/shanruopeng.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/shanruopeng.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/shanruopeng.github.io/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>js引用类型-Date类型 | Shanruo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Shanruo,Shanruo's Blog">
+  
+  <meta name="description" content="Date.parse()、Date.UTC()、Date.now()   Date.parse()方法接收一个表示日期的字符串参数，然后尝试根据这个字符串返回相应日期的毫秒数 ECMA-262 没有定义Date.parse()应该支持哪种日期格式，因此这个方法的行为因实现而异，而且通常是因地区而异 如果传入Date.parse()方法的字符串不能表示日期，那么它会返回NaN 12var some">
+<meta name="keywords" content="javascript高级程序设计,前端基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js引用类型-Date类型">
+<meta property="og:url" content="http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-Date类型/index.html">
+<meta property="og:site_name" content="Shanruo&#39;s Blog">
+<meta property="og:description" content="Date.parse()、Date.UTC()、Date.now()   Date.parse()方法接收一个表示日期的字符串参数，然后尝试根据这个字符串返回相应日期的毫秒数 ECMA-262 没有定义Date.parse()应该支持哪种日期格式，因此这个方法的行为因实现而异，而且通常是因地区而异 如果传入Date.parse()方法的字符串不能表示日期，那么它会返回NaN 12var some">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:updated_time" content="2017-11-29T07:57:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js引用类型-Date类型">
+<meta name="twitter:description" content="Date.parse()、Date.UTC()、Date.now()   Date.parse()方法接收一个表示日期的字符串参数，然后尝试根据这个字符串返回相应日期的毫秒数 ECMA-262 没有定义Date.parse()应该支持哪种日期格式，因此这个方法的行为因实现而异，而且通常是因地区而异 如果传入Date.parse()方法的字符串不能表示日期，那么它会返回NaN 12var some">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/shanruopeng.github.io/css/style.css">
+  <script src="/shanruopeng.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/shanruopeng.github.io/" class="left">
+                    <span class="site-title">Shanruo&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/shanruopeng.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>归档</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                    <a target="_blank" href="/shanruopeng.github.io/404.html">
+                        <i class="fa fa-heartbeat"></i>
+                        <span>公益404</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/shanruopeng.github.io/">
+                    <img src="/shanruopeng.github.io/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Shanruo&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        业精于勤荒于嬉,行成于思毁于随。
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Shanruo" target="_blank" href="//pengyanyan.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/shanruopeng">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="991526442" "="">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="meggie523" "="">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-js引用类型-Date类型" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      js引用类型-Date类型
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-11-29
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <blockquote>
+<p><strong>Date.parse()、Date.UTC()、Date.now()</strong></p>
+</blockquote>
+<ul>
+<li>Date.parse()方法接收一个表示日期的字符串参数，然后尝试根据这个字符串返回相应日<br>期的毫秒数</li>
+<li>ECMA-262 没有定义Date.parse()应该支持哪种日期格式，因此这个方法的行为因实现而异，而且通常是因地区而异</li>
+<li><p>如果传入Date.parse()方法的字符串不能表示日期，那么它会返回NaN</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> someDate = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">Date</span>.parse(<span class="string">"May 25, 2004"</span>));</span><br><span class="line"><span class="keyword">var</span> someDate = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"May 25, 2004"</span>);<span class="comment">//与上一行代码等价</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Date.UTC()方法同样也返回表示日期的毫秒数，但它与Date.parse()在构建值时使用不同的信息</p>
+</li>
+<li>Date.UTC()的参数分别是年份、基于0的月份（一月是0，二月是1，以此类推）、月中的哪一天（1 到31）、小时数（0 到23）、分钟、秒以及毫秒数。</li>
+<li><p>在这些参数中，只有前两个参数（年和月）是必需的。如果没有提供月中的天数，则假设天数为1；如果省略其他参数，则统统假设为0</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// GMT 时间2000 年1 月1 日午夜零时</span></span><br><span class="line"><span class="keyword">var</span> y2k = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">Date</span>.UTC(<span class="number">2000</span>, <span class="number">0</span>));</span><br><span class="line"><span class="comment">// GMT 时间2005 年5 月5 日下午5:55:55</span></span><br><span class="line"><span class="keyword">var</span> allFives = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="built_in">Date</span>.UTC(<span class="number">2005</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">17</span>, <span class="number">55</span>, <span class="number">55</span>));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Data.now()返回表示调用这个方法时的日期和时间的毫秒数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//取得开始时间</span></span><br><span class="line"><span class="keyword">var</span> start = <span class="built_in">Date</span>.now();</span><br><span class="line"><span class="comment">//调用函数</span></span><br><span class="line">doSomething();</span><br><span class="line"><span class="comment">//取得停止时间</span></span><br><span class="line"><span class="keyword">var</span> stop = <span class="built_in">Date</span>.now(),</span><br><span class="line">result = stop – start;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>支持Date.now()方法的浏览器包括IE9+、Firefox 3+、Safari 3+、Opera 10.5 和Chrome。在不支持它的浏览器中，使用+操作符把Date对象转换成字符串，也可以达到同样的目的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//取得开始时间</span></span><br><span class="line"><span class="keyword">var</span> start = +<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="comment">//调用函数</span></span><br><span class="line">doSomething();</span><br><span class="line"><span class="comment">//取得停止时间</span></span><br><span class="line"><span class="keyword">var</span> stop = +<span class="keyword">new</span> <span class="built_in">Date</span>(),</span><br><span class="line">result = stop - start;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>继承的方法</strong></p>
+</blockquote>
+<ul>
+<li>Date 类型重写了toLocaleString()、toString()和valueOf()方法；但这些方法返回的值与其他类型中的方法不同</li>
+<li>Date 类型的toLocaleString()方法会按照与浏览器设置的地区相适应的格式返回日期和时间。时间格式中会包含AM 或PM，但不会包含时区信息，具体的格式会因浏览器而异</li>
+<li>toString()方法则通常返回带有时区信息的日期和时间，其中时间一般以军用时间（即小时的范围是0 到23）表示。</li>
+<li>Date 类型的valueOf()方法，则根本不返回字符串，而是返回日期的毫秒表示。因此，可以方便使用比较操作符（小于或大于）来比较日期值。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date1 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2007</span>, <span class="number">0</span>, <span class="number">1</span>); <span class="comment">//"January 1, 2007"</span></span><br><span class="line"><span class="keyword">var</span> date2 = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2007</span>, <span class="number">1</span>, <span class="number">1</span>); <span class="comment">//"February 1, 2007"</span></span><br><span class="line">alert(date1 &lt; date2); <span class="comment">//true</span></span><br><span class="line">alert(date1 &gt; date2); <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>日期格式化方法</strong></p>
+</blockquote>
+<p>Date 类型还有一些专门用于将日期格式化为字符串的方法</p>
+<ul>
+<li>toDateString()——以特定于实现的格式显示星期几、月、日和年；</li>
+<li>toTimeString()——以特定于实现的格式显示时、分、秒和时区；</li>
+<li>toLocaleDateString()——以特定于地区的格式显示星期几、月、日和年；</li>
+<li>toLocaleTimeString()——以特定于实现的格式显示时、分、秒；</li>
+<li>toUTCString()——以特定于实现的格式完整的UTC 日期。</li>
+<li><strong>以上这些字符串格式方法的输出也是因浏览器而异的</strong></li>
+</ul>
+<blockquote>
+<p><strong>日期/时间组件方法</strong></p>
+</blockquote>
+<ul>
+<li>getTime() 返回表示日期的毫秒数；与valueOf()方法返回的值相同</li>
+<li>setTime(毫秒) 以毫秒数设置日期，会改变整个日期</li>
+<li>getFullYear() 取得4位数的年份（如2007而非仅07）</li>
+<li>getUTCFullYear() 返回UTC日期的4位数年份</li>
+<li>getMonth() 返回日期中的月份，其中0表示一月，11表示十二月</li>
+<li>getUTCMonth() 返回UTC日期中的月份，其中0表示一月，11表示十二月</li>
+<li>setMonth(月) 设置日期的月份。传入的月份值必须大于0，超过11则增加年份</li>
+<li>setUTCMonth(月) 设置UTC日期的月份。传入的月份值必须大于0，超过11则增加年份</li>
+<li>getDate() 返回日期月份中的天数（1到31）</li>
+<li>getUTCDate() 返回UTC日期月份中的天数（1到31）</li>
+<li>setDate(日) 设置日期月份中的天数。如果传入的值超过了该月中应有的天数，则增加月份</li>
+<li>setUTCDate(日) 设置UTC日期月份中的天数。如果传入的值超过了该月中应有的天数，则增加月份</li>
+<li>getDay() 返回日期中星期的星期几（其中0表示星期日，6表示星期六）</li>
+<li>getUTCDay() 返回UTC日期中星期的星期几（其中0表示星期日，6表示星期六）</li>
+<li>getHours() 返回日期中的小时数（0到23）</li>
+<li>getUTCHours() 返回UTC日期中的小时数（0到23）</li>
+<li>getMinutes() 返回日期中的分钟数（0到59）</li>
+<li>getUTCMinutes() 返回UTC日期中的分钟数（0到59）</li>
+<li>setMinutes(分) 设置日期中的分钟数。传入的值超过59则增加小时数</li>
+<li>setUTCMinutes(分) 设置UTC日期中的分钟数。传入的值超过59则增加小时数</li>
+<li>getSeconds() 返回日期中的秒数（0到59）</li>
+<li>getUTCSeconds() 返回UTC日期中的秒数（0到59）</li>
+<li>setSeconds(秒) 设置日期中的秒数。传入的值超过了59会增加分钟数</li>
+<li>setUTCSeconds(秒) 设置UTC日期中的秒数。传入的值超过了59会增加分钟数</li>
+<li>getMilliseconds() 返回日期中的毫秒数</li>
+<li>getUTCMilliseconds() 返回UTC日期中的毫秒数</li>
+<li>setMilliseconds(毫秒) 设置日期中的毫秒数</li>
+<li>setUTCMilliseconds(毫秒) 设置UTC日期中的毫秒数</li>
+<li>getTimezoneOffset() 返回本地时间与UTC时间相差的分钟数。</li>
+</ul>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年11月29日 15:57</p>
+        <p>原始链接： <a class="post-url" href="/shanruopeng.github.io/2017/11/29/js引用类型-Date类型/" title="js引用类型-Date类型">http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-Date类型/</a></p>
+        <footer>
+            <a href="http://shanruopeng.github.io/shanruopeng.github.io">
+                <img src="/shanruopeng.github.io/images/logo.png" alt="Shanruo Peng">
+                Shanruo Peng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-Date类型/&title=《js引用类型-Date类型》 — Shanruo's Blog&pic=/images/img3.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-Date类型/&title=《js引用类型-Date类型》 — Shanruo's Blog&source=不积跬步，无以至千里；不积小流，无以成江海。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-Date类型/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js引用类型-Date类型》 — Shanruo's Blog&url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-Date类型/&via=http://shanruopeng.github.io/shanruopeng.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-Date类型/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-Date类型/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" class="color2">javascript高级程序设计</a>
+      
+    <a href="/shanruopeng.github.io/tags/前端基础/" class="color5">前端基础</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/shanruopeng.github.io/2017/11/29/js引用类型-RegExp类型/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          js引用类型-RegExp类型
+        
+      </span>
+    </a>
+  
+  
+    <a href="/shanruopeng.github.io/2017/11/29/js引用类型-Array类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">js引用类型-Array类型</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Shanruo Peng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://shanruopeng.github.io/shanruopeng.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/shanruopeng.github.io/categories/Photoshop/">Photoshop</a><a class="category-link" href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/shanruopeng.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/archives">
+                    <i class="fa fa-archive"></i><span>归档</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="/shanruopeng.github.io/404.html">
+                    <i class="fa fa-heartbeat"></i><span>公益404</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/shanruopeng.github.io/js/search.js"></script>
+<script src="/shanruopeng.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/shanruopeng.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/shanruopeng.github.io/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>javascript-DOM—节点层次—Document类型 | Shanruo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Shanruo,Shanruo's Blog">
+  
+  <meta name="description" content="Document类型   JavaScript 通过Document 类型表示文档。 在浏览器中，document对象是HTMLDocument（继承自Document类型）的一个实例，表示整个HTML 页面。 document 对象是window 对象的一个属性，因此可以将其作为全局对象来访问。 Document 节点具有下列特征： nodeType 的值为9； nodeName 的值为”#d">
+<meta name="keywords" content="javascript高级程序设计,前端基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-DOM—节点层次—Document类型">
+<meta property="og:url" content="http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript DOM—节点层次—Document类型/index.html">
+<meta property="og:site_name" content="Shanruo&#39;s Blog">
+<meta property="og:description" content="Document类型   JavaScript 通过Document 类型表示文档。 在浏览器中，document对象是HTMLDocument（继承自Document类型）的一个实例，表示整个HTML 页面。 document 对象是window 对象的一个属性，因此可以将其作为全局对象来访问。 Document 节点具有下列特征： nodeType 的值为9； nodeName 的值为”#d">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:updated_time" content="2017-11-29T08:33:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript-DOM—节点层次—Document类型">
+<meta name="twitter:description" content="Document类型   JavaScript 通过Document 类型表示文档。 在浏览器中，document对象是HTMLDocument（继承自Document类型）的一个实例，表示整个HTML 页面。 document 对象是window 对象的一个属性，因此可以将其作为全局对象来访问。 Document 节点具有下列特征： nodeType 的值为9； nodeName 的值为”#d">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/shanruopeng.github.io/css/style.css">
+  <script src="/shanruopeng.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/shanruopeng.github.io/" class="left">
+                    <span class="site-title">Shanruo&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/shanruopeng.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>归档</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                    <a target="_blank" href="/shanruopeng.github.io/404.html">
+                        <i class="fa fa-heartbeat"></i>
+                        <span>公益404</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/shanruopeng.github.io/">
+                    <img src="/shanruopeng.github.io/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Shanruo&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        业精于勤荒于嬉,行成于思毁于随。
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Shanruo" target="_blank" href="//pengyanyan.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/shanruopeng">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="991526442" "="">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="meggie523" "="">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-javascript DOM—节点层次—Document类型" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      javascript-DOM—节点层次—Document类型
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-11-29
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <blockquote>
+<p><strong>Document类型</strong></p>
+</blockquote>
+<ul>
+<li>JavaScript 通过Document 类型表示文档。</li>
+<li>在浏览器中，document对象是HTMLDocument（继承自Document类型）的一个实例，表示整个HTML 页面。</li>
+<li>document 对象是window 对象的一个属性，因此可以将其作为全局对象来访问。</li>
+<li>Document 节点具有下列特征：<ul>
+<li>nodeType 的值为9；</li>
+<li>nodeName 的值为”#document”；</li>
+<li>nodeValue 的值为null；</li>
+<li>parentNode 的值为null；</li>
+<li>ownerDocument 的值为 null；</li>
+<li>其子节点可能是一个DocumentType（最多一个）、Element（最多一个）、ProcessingInstruction或Comment。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>1、文档的子节点</p>
+</blockquote>
+<ul>
+<li>有两个内置的访问Document节点的子节点的快捷方式：documentElement属性和childNodes 列表。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> html = <span class="built_in">document</span>.documentElement; <span class="comment">//取得对&lt;html&gt;的引用</span></span><br><span class="line">alert(html === <span class="built_in">document</span>.childNodes[<span class="number">0</span>]); <span class="comment">//true</span></span><br><span class="line">alert(html === <span class="built_in">document</span>.firstChild); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>作为HTMLDocument 的实例，document 对象还有一个body 属性，直接指向<body>元素。</body></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> body = <span class="built_in">document</span>.body; <span class="comment">//取得对&lt;body&gt;的引用</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Document 另一个可能的子节点是DocumentType。通常将&lt;!DOCTYPE&gt;标签看成一个与文档其他部分不同的实体，可以通过doctype属性（在浏览器中是document.doctype）来访问它的信息。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> doctype = <span class="built_in">document</span>.doctype; <span class="comment">//取得对&lt;!DOCTYPE&gt;的引用</span></span><br></pre></td></tr></table></figure>
+<p><strong>浏览器对document.doctype 的支持差别很大，可以给出如下总结。</strong></p>
+<ul>
+<li>IE8 及之前版本：如果存在文档类型声明，会将其错误地解释为一个注释并把它当作Comment节点；而document.doctype 的值始终为null。</li>
+<li>IE9+及Firefox：如果存在文档类型声明，则将其作为文档的第一个子节点；document.doctype是一个DocumentType节点，也可以通过document.firstChild或document.childNodes[0]访问同一个节点。</li>
+<li>Safari、Chrome 和Opera：如果存在文档类型声明，则将其解析，但不作为文档的子节点。document.doctype 是一个DocumentType节点，但该节点不会出现在document.childNodes 中。</li>
+</ul>
+<blockquote>
+<p>2、文档信息</p>
+</blockquote>
+<ul>
+<li>作为HTMLDocument 的一个实例，document对象还有一些标准的Document对象所没有的属性。</li>
+<li>通过<strong>title</strong>属性可以取得当前页面的标题，也可以修改当前页面的标题并反映在浏览器的标题栏中。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//取得文档标题</span></span><br><span class="line"><span class="keyword">var</span> originalTitle = <span class="built_in">document</span>.title;</span><br><span class="line"><span class="comment">//设置文档标题</span></span><br><span class="line"><span class="built_in">document</span>.title = <span class="string">"New page title"</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>另3 个属性都与对网页的请求有关，它们是<strong>URL</strong>、<strong>domain</strong> 和<strong>referrer</strong>。</li>
+<li>URL 属性中包含页面完整的URL（即地址栏中显示的URL）。</li>
+<li>domain 属性中只包含页面的域名。</li>
+<li>referrer属性中则保存着链接到当前页面的那个页面的URL，在没有来源页面的情况下，referrer 属性中可能会包含空字符串。</li>
+<li>所有这些信息都存在于请求的HTTP头部，通过这些属性我们能够在JavaScrip中访问它们。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//取得完整的URL</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">document</span>.URL;</span><br><span class="line"><span class="comment">//取得域名</span></span><br><span class="line"><span class="keyword">var</span> domain = <span class="built_in">document</span>.domain;</span><br><span class="line"><span class="comment">//取得来源页面的URL</span></span><br><span class="line"><span class="keyword">var</span> referrer = <span class="built_in">document</span>.referrer;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在这3 个属性中，只有domain是可以设置的。但由于安全方面的限制，也并非可以给domain 设置任何值。</li>
+<li>如果URL 中包含一个子域名，例如p2p.wrox.com，那么就只能将domain设置为”wrox.com”，不能将这个属性设置为URL 中不包含的域。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//假设页面来自p2p.wrox.com 域</span></span><br><span class="line"><span class="built_in">document</span>.domain = <span class="string">"wrox.com"</span>; <span class="comment">// 成功</span></span><br><span class="line"><span class="built_in">document</span>.domain = <span class="string">"nczonline.net"</span>; <span class="comment">// 出错！</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>浏览器对domain 属性还有一个限制，即如果域名一开始是“松散的”（loose），那么不能将它再设置为“紧绷的”（tight）。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//假设页面来自于p2p.wrox.com 域</span></span><br><span class="line"><span class="built_in">document</span>.domain = <span class="string">"wrox.com"</span>; <span class="comment">//松散的（成功）</span></span><br><span class="line"><span class="built_in">document</span>.domain = <span class="string">"p2p.wrox.com"</span>; <span class="comment">//紧绷的（出错！）</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>当页面中包含来自其他子域的框架或内嵌框架时，由于跨域安全限制，来自不同子域的页面无法通过JavaScript通信。而通过将每个页面的document.domain设置为相同的值，这些页面就可以互相访问对方包含的JavaScript对象了。</li>
+</ul>
+<blockquote>
+<p>3、查找元素</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>getElement<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"myDiv"</span> <span class="attr">class</span> = <span class="string">"example"</span>&gt;</span>Some text<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"myimage.gif"</span> <span class="attr">name</span>=<span class="string">"myImage"</span> <span class="attr">alt</span> =<span class="string">"myimg"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">legend</span>&gt;</span>Which color do you prefer?<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"red"</span> <span class="attr">name</span>=<span class="string">"color"</span> <span class="attr">id</span>=<span class="string">"colorRed"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"colorRed"</span>&gt;</span>Red<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span><span class="attr">value</span>=<span class="string">"green"</span> <span class="attr">name</span>=<span class="string">"color"</span> <span class="attr">id</span>=<span class="string">"colorGreen"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"colorGreen"</span>&gt;</span>Green<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"radio"</span> <span class="attr">value</span>=<span class="string">"blue"</span> <span class="attr">name</span>=<span class="string">"color"</span> <span class="attr">id</span>=<span class="string">"colorBlue"</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"colorBlue"</span>&gt;</span>Blue<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//getElementById(),接收一个参数：要取得的元素的ID,严格区分大小写。</span></span><br><span class="line"><span class="comment">//如果页面中多个元素的ID 值相同，getElementById()只返回文档中第一次出现的元素。</span></span><br><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">/**getElementsByTagName()。这个方法接受一个参数，即要取得元素的标签名，而返回的是包含零或多个元素的NodeList**/</span></span><br><span class="line"><span class="keyword">var</span> images = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"img"</span>);</span><br><span class="line"></span><br><span class="line">alert(images.length); <span class="comment">//输出图像的数量</span></span><br><span class="line">alert(images[<span class="number">0</span>].src); <span class="comment">//输出第一个图像元素的src 特性</span></span><br><span class="line">aler t(images.item(<span class="number">0</span>).src); <span class="comment">//输出第一个图像元素的src 特性</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用namedItem()方法可以通过元素的name特性取得集合中的项。</span></span><br><span class="line"><span class="keyword">var</span> myImage = images.namedItem(<span class="string">"myImage"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//HTMLCollection 还支持按名称访问项</span></span><br><span class="line"><span class="keyword">var</span> myImage = images[<span class="string">"myImage"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//取得文档中的所有元素</span></span><br><span class="line"><span class="keyword">var</span> allElements = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"*"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//返回带有给定name 特性的所有元素</span></span><br><span class="line"><span class="keyword">var</span> radios = <span class="built_in">document</span>.getElementsByName(<span class="string">"color"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取指定类名的所有元素</span></span><br><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"example"</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>4、特殊集合</p>
+</blockquote>
+<ul>
+<li><strong>document.anchors</strong>，包含文档中所有带name 特性的<a>元素；</a></li>
+<li><strong>document.links</strong>，包含文档中所有带href 特性的<a>元素；</a></li>
+<li><strong>document.forms</strong>，包含文档中所有的<form>元素；</form></li>
+<li><strong>document.images</strong>，包含文档中所有的<img>元素；</li>
+</ul>
+<blockquote>
+<p>5、文档写入</p>
+</blockquote>
+<ul>
+<li>document具有将输出流写入到网页中的能力，方法包括write()、writeln()、open()和close()</li>
+<li>write()和writeln()方法都接受一个字符串参数，即要写入到输出流中的文本。write()会原样写入，而writeln()则会在字符串的末尾添加一个换行符（\n）。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>document.write() Example<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span>The current date and time is:</span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="built_in">document</span>.write(<span class="string">"&lt;strong&gt;"</span> + (<span class="keyword">new</span> <span class="built_in">Date</span>()).toString() + <span class="string">"&lt;/strong&gt;"</span>);</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>还可以使用write()和writeln()方法动态地包含外部资源</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>document.write() Example 3<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">        document.write("<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">\</span>"<span class="attr">text</span>/<span class="attr">javascript</span>\" <span class="attr">src</span>=<span class="string">\</span>"<span class="attr">file.js</span>\"&gt;</span><span class="undefined">" +</span></span></span><br><span class="line"><span class="javascript">        <span class="string">"&lt;\/script&gt;"</span>);</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>open()和close()分别用于打开和关闭网页的输出流</li>
+</ul>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年11月29日 16:33</p>
+        <p>原始链接： <a class="post-url" href="/shanruopeng.github.io/2017/11/30/javascript DOM—节点层次—Document类型/" title="javascript-DOM—节点层次—Document类型">http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript DOM—节点层次—Document类型/</a></p>
+        <footer>
+            <a href="http://shanruopeng.github.io/shanruopeng.github.io">
+                <img src="/shanruopeng.github.io/images/logo.png" alt="Shanruo Peng">
+                Shanruo Peng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript DOM—节点层次—Document类型/&title=《javascript-DOM—节点层次—Document类型》 — Shanruo's Blog&pic=/images/img1.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript DOM—节点层次—Document类型/&title=《javascript-DOM—节点层次—Document类型》 — Shanruo's Blog&source=不积跬步，无以至千里；不积小流，无以成江海。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript DOM—节点层次—Document类型/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《javascript-DOM—节点层次—Document类型》 — Shanruo's Blog&url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript DOM—节点层次—Document类型/&via=http://shanruopeng.github.io/shanruopeng.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript DOM—节点层次—Document类型/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript DOM—节点层次—Document类型/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" class="color2">javascript高级程序设计</a>
+      
+    <a href="/shanruopeng.github.io/tags/前端基础/" class="color5">前端基础</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/shanruopeng.github.io/2017/11/30/DOM-节点层次-Element类型/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          javascript-DOM-节点层次-Element类型
+        
+      </span>
+    </a>
+  
+  
+    <a href="/shanruopeng.github.io/2017/11/30/javascript DOM—节点层次—Node类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">javascript-DOM—节点层次—Node类型</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Shanruo Peng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://shanruopeng.github.io/shanruopeng.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/shanruopeng.github.io/categories/Photoshop/">Photoshop</a><a class="category-link" href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/shanruopeng.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/archives">
+                    <i class="fa fa-archive"></i><span>归档</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="/shanruopeng.github.io/404.html">
+                    <i class="fa fa-heartbeat"></i><span>公益404</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/shanruopeng.github.io/js/search.js"></script>
+<script src="/shanruopeng.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/shanruopeng.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/shanruopeng.github.io/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

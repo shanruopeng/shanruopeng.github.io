@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>js引用类型-RegExp类型 | Shanruo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Shanruo,Shanruo's Blog">
+  
+  <meta name="description" content="ECMAScript 通过RegExp 类型来支持正则表达式。使用下面类似Perl的语法，就可以创建一个正则表达式。1var expression = / pattern / flags ;  其中的模式（pattern）部分可以是任何简单或复杂的正则表达式，可以包含字符类、限定符、分组、向前查找以及反向引用 每个正则表达式都可带有一或多个标志（flags），用以标明正则表达式的行为 正则表达式的">
+<meta name="keywords" content="javascript高级程序设计,前端基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js引用类型-RegExp类型">
+<meta property="og:url" content="http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-RegExp类型/index.html">
+<meta property="og:site_name" content="Shanruo&#39;s Blog">
+<meta property="og:description" content="ECMAScript 通过RegExp 类型来支持正则表达式。使用下面类似Perl的语法，就可以创建一个正则表达式。1var expression = / pattern / flags ;  其中的模式（pattern）部分可以是任何简单或复杂的正则表达式，可以包含字符类、限定符、分组、向前查找以及反向引用 每个正则表达式都可带有一或多个标志（flags），用以标明正则表达式的行为 正则表达式的">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:updated_time" content="2017-11-29T07:58:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js引用类型-RegExp类型">
+<meta name="twitter:description" content="ECMAScript 通过RegExp 类型来支持正则表达式。使用下面类似Perl的语法，就可以创建一个正则表达式。1var expression = / pattern / flags ;  其中的模式（pattern）部分可以是任何简单或复杂的正则表达式，可以包含字符类、限定符、分组、向前查找以及反向引用 每个正则表达式都可带有一或多个标志（flags），用以标明正则表达式的行为 正则表达式的">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/shanruopeng.github.io/css/style.css">
+  <script src="/shanruopeng.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/shanruopeng.github.io/" class="left">
+                    <span class="site-title">Shanruo&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/shanruopeng.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>归档</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                    <a target="_blank" href="/shanruopeng.github.io/404.html">
+                        <i class="fa fa-heartbeat"></i>
+                        <span>公益404</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/shanruopeng.github.io/">
+                    <img src="/shanruopeng.github.io/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Shanruo&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        业精于勤荒于嬉,行成于思毁于随。
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Shanruo" target="_blank" href="//pengyanyan.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/shanruopeng">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="991526442" "="">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="meggie523" "="">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-js引用类型-RegExp类型" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      js引用类型-RegExp类型
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-11-29
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>ECMAScript 通过RegExp 类型来支持正则表达式。使用下面类似Perl的语法，就可以创建一个正则表达式。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> expression = <span class="regexp">/ pattern /</span> flags ;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>其中的模式（pattern）部分可以是任何简单或复杂的正则表达式，可以包含字符类、限定符、分组、向前查找以及反向引用</li>
+<li>每个正则表达式都可带有一或多个标志（flags），用以标明正则表达式的行为</li>
+<li><p>正则表达式的匹配模式支持下列3 个标志:</p>
+<ul>
+<li><strong>g</strong>：表示全局（global）模式，即模式将被应用于所有字符串，而非在发现第一个匹配项时立即停止；</li>
+<li><strong>i</strong>：表示不区分大小写（case-insensitive）模式，即在确定匹配项时忽略模式与字符串的大小写；</li>
+<li><strong>m</strong>：表示多行（multiline）模式，即在到达一行文本末尾时还会继续查找下一行中是否存在与模式匹配的项。 </li>
+</ul>
+</li>
+<li><p>一个正则表达式就是一个模式与上述3 个标志的组合体。不同组合产生不同结果</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配字符串中所有"at"的实例</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern1 = <span class="regexp">/at/g</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配第一个"bat"或"cat"，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern2 = <span class="regexp">/[bc]at/i</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配所有以"at"结尾的3 个字符的组合，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern3 = <span class="regexp">/.at/gi</span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>与其他语言中的正则表达式类似，模式中使用的所有元字符都必须转义。正则表达式中的元字符包括：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">( [ &#123; \ ^ $ | ) ? * + .]&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这些元字符在正则表达式中都有一或多种特殊用途，因此如果想要匹配字符串中包含的这些字符，就必须对它们进行转义</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配第一个"bat"或"cat"，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern1 = <span class="regexp">/[bc]at/i</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配第一个" [bc]at"，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern2 = <span class="regexp">/\[bc\]at/i</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配所有以"at"结尾的3 个字符的组合，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern3 = <span class="regexp">/.at/gi</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 匹配所有".at"，不区分大小写</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> pattern4 = <span class="regexp">/\.at/gi</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>创建正则表达式</strong></p>
+</blockquote>
+<ul>
+<li><p>以字面量形式来定义的正则表达式</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> expression = <span class="regexp">/ pattern /</span> flags ;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用RegExp 构造函数，它接收两个参数：一个是要匹配的字符串模式，另一个是可选的标志字符串。</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 与pattern1 相同，只不过是使用构造函数创建的</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line"><span class="keyword">var</span> pattern2 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"[bc]at"</span>, <span class="string">"i"</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>传递给RegExp 构造函数的两个参数都是字符串（不能把正则表达式字面量传递给RegExp 构造函数）</p>
+</li>
+<li>由于RegExp 构造函数的模式参数是字符串，所以在某些情况下要对字符进行双重转义。所有元字符都必须双重转义，那些已经转义过的字符也是如此。例如\n（字符\在字符串中通常被转义为\，而在正则表达式字符串中就会变成\\）</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">字面量模式</th>
+<th style="text-align:center">等价的字符串</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">/[bc]at/</td>
+<td style="text-align:center">“\\[bc\\]at”</td>
+</tr>
+<tr>
+<td style="text-align:center">/.at/</td>
+<td style="text-align:center">“\\.at”</td>
+</tr>
+<tr>
+<td style="text-align:center">/name\/age/</td>
+<td style="text-align:center">“name\\/age”</td>
+</tr>
+<tr>
+<td style="text-align:center">/\d.\d{1,2}/</td>
+<td style="text-align:center">“\\d.\\d{1,2}”</td>
+</tr>
+<tr>
+<td style="text-align:center">/\w\hello\123/</td>
+<td style="text-align:center">“\\w\\\\hello\\\\123”</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>列表项使用正则表达式字面量必须像直接调用RegExp 构造函数一样，每次都创<br>建新的RegExp 实例</li>
+</ul>
+<blockquote>
+<p><strong>RegExp实例属性</strong></p>
+</blockquote>
+<ul>
+<li>global：布尔值，表示是否设置了g 标志。</li>
+<li>ignoreCase：布尔值，表示是否设置了i 标志。</li>
+<li>lastIndex：整数，表示开始搜索下一个匹配项的字符位置，从0 算起。</li>
+<li>multiline：布尔值，表示是否设置了m 标志。</li>
+<li><p>source：正则表达式的字符串表示，按照字面量形式而非传入构造函数中的字符串模式返回。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> pattern1 = <span class="regexp">/\[bc\]at/i</span>;</span><br><span class="line">alert(pattern1.global); <span class="comment">//false</span></span><br><span class="line">alert(pattern1.ignoreCase); <span class="comment">//true</span></span><br><span class="line">alert(pattern1.multiline); <span class="comment">//false</span></span><br><span class="line">alert(pattern1.lastIndex); <span class="comment">//0</span></span><br><span class="line">alert(pattern1.source); <span class="comment">//"\[bc\]at"</span></span><br><span class="line"><span class="keyword">var</span> pattern2 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"\\[bc\\]at"</span>, <span class="string">"i"</span>);</span><br><span class="line">alert(pattern2.global); <span class="comment">//false</span></span><br><span class="line">alert(pattern2.ignoreCase); <span class="comment">//true</span></span><br><span class="line">alert(pattern2.multiline); <span class="comment">//false</span></span><br><span class="line">alert(pattern2.lastIndex); <span class="comment">//0</span></span><br><span class="line">aler t(pattern2.source); <span class="comment">//"\[bc\]at"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>RegExp实例方法</strong></p>
+</blockquote>
+<p><strong>1、exec()</strong></p>
+<ul>
+<li>RegExp 对象的主要方法是exec()，该方法是专门为捕获组而设计的。</li>
+<li>exec()接受一个参数，即要应用模式的字符串，然后返回包含第一个匹配项信息的数组；或者在没有匹配项的情况下返回null。</li>
+<li>返回的数组虽然是Array 的实例，但包含两个额外的属性：index 和input。其中，index 表示匹配项在字符串中的位置，而input 表示应用正则表达式的字符串。</li>
+<li><p>在数组中，第一项是与整个模式匹配的字符串，其他项是与模式中的捕获组匹配的字符串（如果模式中没有捕获组，则该数组只包含一项）。</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="string">"mom and dad and baby"</span>;</span><br><span class="line"><span class="keyword">var</span> pattern = <span class="regexp">/mom( and dad( and baby)?)?/gi</span>;</span><br><span class="line"><span class="keyword">var</span> matches = pattern.exec(text);</span><br><span class="line">alert(matches.index); <span class="comment">// 0</span></span><br><span class="line">alert(matches.input); <span class="comment">// "mom and dad and baby"</span></span><br><span class="line">alert(matches[<span class="number">0</span>]); <span class="comment">// "mom and dad and baby"</span></span><br><span class="line">alert(matches[<span class="number">1</span>]); <span class="comment">// " and dad and baby"</span></span><br><span class="line">aler t(matches[<span class="number">2</span>]); <span class="comment">// " and baby"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于exec()方法而言，即使在模式中设置了全局标志（g），它每次也只会返回一个匹配项。</p>
+</li>
+<li>在不设置全局标志的情况下，在同一个字符串上多次调用exec()将始终返回第一个匹配项的信息。</li>
+<li><p>在设置全局标志的情况下，每次调用exec()则都会在字符串中继续查找新匹配项。</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="string">"cat, bat, sat, fat"</span>;</span><br><span class="line"><span class="keyword">var</span> pattern1 = <span class="regexp">/.at/</span>;</span><br><span class="line"><span class="keyword">var</span> matches = pattern1.exec(text);</span><br><span class="line">alert(matches.index); <span class="comment">//0</span></span><br><span class="line">alert(matches[<span class="number">0</span>]); <span class="comment">//cat</span></span><br><span class="line">alert(pattern1.lastIndex); <span class="comment">//0</span></span><br><span class="line">matches = pattern1.exec(text);</span><br><span class="line">alert(matches.index); <span class="comment">//0</span></span><br><span class="line">alert(matches[<span class="number">0</span>]); <span class="comment">//cat</span></span><br><span class="line">alert(pattern1.lastIndex); <span class="comment">//0</span></span><br><span class="line"><span class="keyword">var</span> pattern2 = <span class="regexp">/.at/g</span>;</span><br><span class="line"><span class="keyword">var</span> matches = pattern2.exec(text);</span><br><span class="line">alert(matches.index); <span class="comment">//0</span></span><br><span class="line">alert(matches[<span class="number">0</span>]); <span class="comment">//cat</span></span><br><span class="line">alert(pattern2.lastIndex); <span class="comment">//3</span></span><br><span class="line">matches = pattern2.exec(text);</span><br><span class="line">alert(matches.index); <span class="comment">//5</span></span><br><span class="line">alert(matches[<span class="number">0</span>]); <span class="comment">//bat</span></span><br><span class="line">alert(pattern2.lastIndex); <span class="comment">//8</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>2、test()</strong></p>
+<ul>
+<li>test()接受一个字符串参数。在模式与该参数匹配的情况下返回true；否则，返回false</li>
+<li><p>在只想知道目标字符串与某个模式是否匹配，但不需要知道其文本内容的情况下，使用这个方法非常方便</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="string">"000-00-0000"</span>;</span><br><span class="line"><span class="keyword">var</span> pattern = <span class="regexp">/\d&#123;3&#125;-\d&#123;2&#125;-\d&#123;4&#125;/</span>;</span><br><span class="line"><span class="keyword">if</span> (pattern.test(text))&#123;</span><br><span class="line">    alert(<span class="string">"The pattern was matched."</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>3、toLocaleString()、toString()、valueOf(）</strong></p>
+<ul>
+<li>RegExp 实例继承的toLocaleString()和toString()方法都会返回正则表达式的字面量，与创建正则表达式的方式无关</li>
+<li><p>正则表达式的valueOf()方法返回正则表达式本身。</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pattern = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"\\[bc\\]at"</span>, <span class="string">"gi"</span>);</span><br><span class="line">alert(pattern.toString()); <span class="comment">// /\[bc\]at/gi</span></span><br><span class="line">alert(pattern.toLocaleString()); <span class="comment">// /\[bc\]at/gi</span></span><br><span class="line">alert(pattern.valueOf()); <span class="comment">// /\[bc\]at/gi</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>RegExp构造函数属性</strong></p>
+</blockquote>
+<ul>
+<li>RegExp 构造函数包含一些属性，这些属性适用于作用域中的所有正则表达式，并且基于所执行的最近一次正则表达式操作而变化。<br>长属性名 |短属性名|说 明<br>—-| :—-:|—-<br>input|  \$_ | 最近一次要匹配的字符串。Opera未实现此属性<br>lastMatch| \$&amp; |最近一次的匹配项。Opera未实现此属性<br>lastParen |\$+ |最近一次匹配的捕获组。Opera未实现此属性<br>leftContext|\$` |input字符串中lastMatch之前的文本<br>multiline| \$* |布尔值，表示是否所有表达式都使用多行模式。IE和Opera未实现此属性<br>rightContext| \$’| Input字符串中lastMatch之后的文本</li>
+</ul>
+<ul>
+<li><p>使用以上属性可以从exec()或test()执行的操作中提取出更具体的信息.</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> text = <span class="string">"this has been a short summer"</span>;</span><br><span class="line">    <span class="keyword">var</span> pattern = <span class="regexp">/(.)hort/g</span>;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    * 注意：Opera 不支持input、lastMatch、lastParen 和multiline 属性</span></span><br><span class="line"><span class="comment">    * Internet Explorer 不支持multiline 属性</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">if</span> (pattern.test(text))&#123;</span><br><span class="line">    alert(<span class="built_in">RegExp</span>.input); <span class="comment">// this has been a short summer</span></span><br><span class="line">    alert(<span class="built_in">RegExp</span>.leftContext); <span class="comment">// this has been a</span></span><br><span class="line">    alert(<span class="built_in">RegExp</span>.rightContext); <span class="comment">// summer</span></span><br><span class="line">    alert(<span class="built_in">RegExp</span>.lastMatch); <span class="comment">// short</span></span><br><span class="line">    alert(<span class="built_in">RegExp</span>.lastParen); <span class="comment">// s</span></span><br><span class="line">    alert(<span class="built_in">RegExp</span>.multiline); <span class="comment">// false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用的长属性名都可以用相应的短属性名来代替。只不过，由于这些短属性名大都<br>不是有效的ECMAScript 标识符，因此必须通过方括号语法来访问它们。</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="string">"this has been a short summer"</span>;</span><br><span class="line"><span class="keyword">var</span> pattern = <span class="regexp">/(.)hort/g</span>;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 注意：Opera 不支持input、lastMatch、lastParen 和multiline 属性</span></span><br><span class="line"><span class="comment">* Internet Explorer 不支持multiline 属性</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">if</span> (pattern.test(text))&#123;</span><br><span class="line">    alert(<span class="built_in">RegExp</span>.$_); <span class="comment">// this has been a short summer</span></span><br><span class="line">alert(<span class="built_in">RegExp</span>[<span class="string">"$`"</span>]); <span class="comment">// this has been a</span></span><br><span class="line">    alert(<span class="built_in">RegExp</span>[<span class="string">"$'"</span>]); <span class="comment">// summer</span></span><br><span class="line">alert(<span class="built_in">RegExp</span>[<span class="string">"$&amp;"</span>]); <span class="comment">// short</span></span><br><span class="line">    alert(<span class="built_in">RegExp</span>[<span class="string">"$+"</span>]); <span class="comment">// s</span></span><br><span class="line">alert(<span class="built_in">RegExp</span>[<span class="string">"$*"</span>]); <span class="comment">// false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>除了上面介绍的几个属性之外，还有多达9个用于存储捕获组的构造函数属性。访问这些属性的语法是RegExp.\$1、RegExp.\$2…RegExp.\$9，分别用于存储第一、第二……第九个匹配的捕获组。在调用exec()或test()方法时，这些属性会被自动填充.</p>
+  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> text = <span class="string">"this has been a short summer"</span>;</span><br><span class="line"><span class="keyword">var</span> pattern = <span class="regexp">/(..)or(.)/g</span>;</span><br><span class="line"><span class="keyword">if</span> (pattern.test(text))&#123;</span><br><span class="line">    alert(<span class="built_in">RegExp</span>.$<span class="number">1</span>); <span class="comment">//sh</span></span><br><span class="line">alert(<span class="built_in">RegExp</span>.$<span class="number">2</span>); <span class="comment">//t</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p><strong>模式的局限性</strong></p>
+</blockquote>
+<p>下面列出了ECMAScript 正则表达式不支持的特性</p>
+<ul>
+<li>匹配字符串开始和结尾的\A 和\Z 锚①</li>
+<li>向后查找（lookbehind）②</li>
+<li>并集和交集类</li>
+<li>原子组（atomic grouping）</li>
+<li>Unicode 支持（单个字符除外，如\uFFFF）</li>
+<li>命名的捕获组③</li>
+<li>s（single，单行）和x（free-spacing，无间隔）匹配模式</li>
+<li>条件匹配</li>
+<li><p>正则表达式注释</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">① 但支持以插入符号（^）和美元符号（$）来匹配字符串的开始和结尾。</span><br><span class="line">② 但完全支持向前查找（lookahead）。</span><br><span class="line">③ 但支持编号的捕获组。</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年11月29日 15:58</p>
+        <p>原始链接： <a class="post-url" href="/shanruopeng.github.io/2017/11/29/js引用类型-RegExp类型/" title="js引用类型-RegExp类型">http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-RegExp类型/</a></p>
+        <footer>
+            <a href="http://shanruopeng.github.io/shanruopeng.github.io">
+                <img src="/shanruopeng.github.io/images/logo.png" alt="Shanruo Peng">
+                Shanruo Peng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-RegExp类型/&title=《js引用类型-RegExp类型》 — Shanruo's Blog&pic=/images/img4.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-RegExp类型/&title=《js引用类型-RegExp类型》 — Shanruo's Blog&source=不积跬步，无以至千里；不积小流，无以成江海。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-RegExp类型/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《js引用类型-RegExp类型》 — Shanruo's Blog&url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-RegExp类型/&via=http://shanruopeng.github.io/shanruopeng.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-RegExp类型/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/29/js引用类型-RegExp类型/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" class="color2">javascript高级程序设计</a>
+      
+    <a href="/shanruopeng.github.io/tags/前端基础/" class="color5">前端基础</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/shanruopeng.github.io/2017/11/29/js引用类型-Function类型/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          js引用类型-Function类型
+        
+      </span>
+    </a>
+  
+  
+    <a href="/shanruopeng.github.io/2017/11/29/js引用类型-Date类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">js引用类型-Date类型</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Shanruo Peng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://shanruopeng.github.io/shanruopeng.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/shanruopeng.github.io/categories/Photoshop/">Photoshop</a><a class="category-link" href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/shanruopeng.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/archives">
+                    <i class="fa fa-archive"></i><span>归档</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="/shanruopeng.github.io/404.html">
+                    <i class="fa fa-heartbeat"></i><span>公益404</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/shanruopeng.github.io/js/search.js"></script>
+<script src="/shanruopeng.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/shanruopeng.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/shanruopeng.github.io/js/animate.js"></script>
+
+  </div>
+</body>
+</html>

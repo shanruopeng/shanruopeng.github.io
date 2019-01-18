@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>javascript-BOM-navigator 对象 | Shanruo&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="Shanruo,Shanruo's Blog">
+  
+  <meta name="description" content="每个浏览器中的navigator对象也都有一套自己的属性。下表列出了存在于所有浏览器中的属性和方法，以及支持它们的浏览器版本。     属性或方法 说 明 IE Firefox Safari/Chrome Opera     appCodeName 浏览器的名称。通常都是Mozilla，即使在非Mozilla浏览器中也是如此 3.0+ 1.0+ 1.0+ 7.0+   appMinorVersi">
+<meta name="keywords" content="javascript高级程序设计,前端基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript-BOM-navigator 对象">
+<meta property="og:url" content="http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript-BOM—navigator 对象/index.html">
+<meta property="og:site_name" content="Shanruo&#39;s Blog">
+<meta property="og:description" content="每个浏览器中的navigator对象也都有一套自己的属性。下表列出了存在于所有浏览器中的属性和方法，以及支持它们的浏览器版本。     属性或方法 说 明 IE Firefox Safari/Chrome Opera     appCodeName 浏览器的名称。通常都是Mozilla，即使在非Mozilla浏览器中也是如此 3.0+ 1.0+ 1.0+ 7.0+   appMinorVersi">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:updated_time" content="2017-11-29T08:30:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript-BOM-navigator 对象">
+<meta name="twitter:description" content="每个浏览器中的navigator对象也都有一套自己的属性。下表列出了存在于所有浏览器中的属性和方法，以及支持它们的浏览器版本。     属性或方法 说 明 IE Firefox Safari/Chrome Opera     appCodeName 浏览器的名称。通常都是Mozilla，即使在非Mozilla浏览器中也是如此 3.0+ 1.0+ 1.0+ 7.0+   appMinorVersi">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/shanruopeng.github.io/css/style.css">
+  <script src="/shanruopeng.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/shanruopeng.github.io/" class="left">
+                    <span class="site-title">Shanruo&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/shanruopeng.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>归档</span>
+                    </a>
+                    
+                    <a href="/shanruopeng.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                    <a target="_blank" href="/shanruopeng.github.io/404.html">
+                        <i class="fa fa-heartbeat"></i>
+                        <span>公益404</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/shanruopeng.github.io/">
+                    <img src="/shanruopeng.github.io/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        Shanruo&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        业精于勤荒于嬉,行成于思毁于随。
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Shanruo" target="_blank" href="//pengyanyan.cn">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/shanruopeng">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="991526442" "="">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="meggie523" "="">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-javascript-BOM—navigator 对象" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      javascript-BOM-navigator 对象
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-11-29
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <ul>
+<li>每个浏览器中的navigator对象也都有一套自己的属性。下表列出了存在于所有浏览器中的属性和方法，以及支持它们的浏览器版本。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性或方法</th>
+<th>说 明</th>
+<th>IE</th>
+<th>Firefox</th>
+<th>Safari/Chrome</th>
+<th>Opera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>appCodeName</td>
+<td>浏览器的名称。通常都是Mozilla，即使在非Mozilla浏览器中也是如此</td>
+<td>3.0+</td>
+<td>1.0+</td>
+<td>1.0+</td>
+<td>7.0+</td>
+</tr>
+<tr>
+<td>appMinorVersion</td>
+<td>次版本信息</td>
+<td>4.0+</td>
+<td>－</td>
+<td>－</td>
+<td>9.5+</td>
+</tr>
+<tr>
+<td>appName</td>
+<td>完整的浏览器名称</td>
+<td>3.0+</td>
+<td>1.0+</td>
+<td>1.0+</td>
+<td>7.0+</td>
+</tr>
+<tr>
+<td>appVersion</td>
+<td>浏览器的版本。一般不与实际的浏览器版本对应</td>
+<td>3.0+</td>
+<td>1.0+</td>
+<td>1.0+</td>
+<td>7.0+</td>
+</tr>
+<tr>
+<td>buildID</td>
+<td>浏览器编译版本</td>
+<td>－</td>
+<td>2.0+</td>
+<td>－</td>
+<td>－</td>
+</tr>
+<tr>
+<td>cookieEnabled</td>
+<td>表示cookie是否启用</td>
+<td>4.0+</td>
+<td>1.0+</td>
+<td>1.0+</td>
+<td>7.0+</td>
+</tr>
+<tr>
+<td>cpuClass</td>
+<td>客户端计算机中使用的CPU类型（x86、68K、Alpha、PPC或Other）</td>
+<td>4.0+</td>
+<td>－</td>
+<td>－</td>
+<td>－</td>
+</tr>
+<tr>
+<td>javaEnabled()</td>
+<td>表示当前浏览器中是否启用了Java</td>
+<td>4.0+</td>
+<td>1.0+</td>
+<td>1.0+</td>
+<td>7.0+</td>
+</tr>
+<tr>
+<td>language</td>
+<td>浏览器的主语言</td>
+<td>－</td>
+<td>1.0+</td>
+<td>1.0+</td>
+<td>7.0+</td>
+</tr>
+<tr>
+<td>mimeTypes</td>
+<td>在浏览器中注册的MIME类型数组</td>
+<td>4.0+</td>
+<td>1.0+</td>
+<td>1.0+</td>
+<td>7.0+</td>
+</tr>
+<tr>
+<td>onLine</td>
+<td>表示浏览器是否连接到了因特网</td>
+<td>4.0+</td>
+<td>1.0+</td>
+<td>－</td>
+<td>9.5+</td>
+</tr>
+<tr>
+<td>oscpu</td>
+<td>客户端计算机的操作系统或使用的CPU</td>
+<td>－</td>
+<td>1.0+</td>
+<td>－</td>
+<td>－</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>浏览器所在的系统平台</td>
+<td>4.0+</td>
+<td>1.0+</td>
+<td>1.0+</td>
+<td>7.0+</td>
+</tr>
+<tr>
+<td>plugins</td>
+<td>浏览器中安装的插件信息的数组</td>
+<td>4.0+</td>
+<td>1.0+</td>
+<td>1.0+</td>
+<td>7.0+</td>
+</tr>
+<tr>
+<td>preference()</td>
+<td>设置用户的首选项</td>
+<td>－</td>
+<td>1.5+</td>
+<td>－</td>
+<td>－</td>
+</tr>
+<tr>
+<td>product</td>
+<td>产品名称（如 Gecko）</td>
+<td>－</td>
+<td>1.0+</td>
+<td>1.0+</td>
+<td>－</td>
+</tr>
+<tr>
+<td>productSub</td>
+<td>关于产品的次要信息（如Gecko的版本）</td>
+<td>－</td>
+<td>1.0+</td>
+<td>1.0+</td>
+<td>－</td>
+</tr>
+<tr>
+<td>register-ContentHandler()</td>
+<td>针对特定的MIME类型将一个站点注册为处理程序</td>
+<td>－</td>
+<td>2.0+</td>
+<td>－</td>
+<td>－</td>
+</tr>
+<tr>
+<td>register-ProtocolHandler()</td>
+<td>针对特定的协议将一个站点注册为处理程序</td>
+<td>－</td>
+<td>2.0</td>
+<td>－</td>
+<td>－</td>
+</tr>
+<tr>
+<td>systemLanguage</td>
+<td>操作系统的语言</td>
+<td>4.0+</td>
+<td>－</td>
+<td>－</td>
+<td>－</td>
+</tr>
+<tr>
+<td>userAgent</td>
+<td>浏览器的用户代理字符串</td>
+<td>3.0+</td>
+<td>1.0+</td>
+<td>1.0+</td>
+<td>7.0+</td>
+</tr>
+<tr>
+<td>userLanguage</td>
+<td>操作系统的默认语言</td>
+<td>4.0+</td>
+<td>－</td>
+<td>－</td>
+<td>7.0+</td>
+</tr>
+<tr>
+<td>userProfile</td>
+<td>借以访问用户个人信息的对象</td>
+<td>4.0+</td>
+<td>－</td>
+<td>－</td>
+<td>－</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>浏览器的品牌</td>
+<td>－</td>
+<td>1.0+</td>
+<td>1.0+</td>
+<td>－</td>
+</tr>
+<tr>
+<td>vendorSub</td>
+<td>有关供应商的次要信息</td>
+<td>－</td>
+<td>1.0+</td>
+<td>1.0+</td>
+<td>－</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>1、<strong>检测插件</strong></p>
+</blockquote>
+<ul>
+<li>检测浏览器中是否安装了特定的插件。对于非IE浏览器，可以使用plugins数组，该数组中的每一项都包含下列属性。<ul>
+<li>name：插件的名字</li>
+<li>description：插件的描述。</li>
+<li>filename：插件的文件名。</li>
+<li>length：插件所处理的MIME 类型数量。</li>
+</ul>
+</li>
+<li>在检测插件时，需要循环迭代每个插件并将插件的name与给定的名字进行比较。</li>
+<li>hasPlugin()函数接受一个参数：要检测的插件名</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**检测插件（在IE 中无效）,在Firefox、Safari、Opera和Chrome中可以使用这种方法来检测插件。**/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasPlugin</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">name = name.toLowerCase();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i &lt; navigator.plugins.length; i++)&#123;</span><br><span class="line"><span class="keyword">if</span> (navigator. plugins [i].name.toLowerCase().indexOf(name) &gt; <span class="number">-1</span>)&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//检测Flash</span></span><br><span class="line">alert(hasPlugin(<span class="string">"Flash"</span>));</span><br><span class="line"><span class="comment">//检测QuickTime</span></span><br><span class="line">alert(hasPlugin(<span class="string">"QuickTime"</span>));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在IE 中检测插件的唯一方式就是使用专有的ActiveXObject类型，并尝试创建一个特定插件的实例。</li>
+<li>IE 是以COM对象的方式实现插件的，而COM对象使用唯一标识符来标识。因此，要想检查特定的插件，就必须知道其COM标识符。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测IE 中的插件</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasIEPlugin</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">new</span> ActiveXObject(name);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ex)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//检测Flash</span></span><br><span class="line">alert(hasIEPlugin(<span class="string">"ShockwaveFlash.ShockwaveFlash"</span>));</span><br><span class="line"><span class="comment">//检测QuickTime</span></span><br><span class="line">alert(hasIEPlugin(<span class="string">"QuickTime.QuickTime"</span>));</span><br></pre></td></tr></table></figure>
+<ul>
+<li>鉴于检测这两种插件的方法差别太大，因此典型的做法是针对每个插件分别创建检测函数，而不是使用前面介绍的通用检测方法。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//检测所有浏览器中的Flash</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasFlash</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = hasPlugin(<span class="string">"Flash"</span>);</span><br><span class="line">    <span class="keyword">if</span> (!result)&#123;</span><br><span class="line">        result = hasIEPlugin(<span class="string">"ShockwaveFlash.ShockwaveFlash"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//检测所有浏览器中的QuickTime</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">hasQuickTime</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = hasPlugin(<span class="string">"QuickTime"</span>);</span><br><span class="line">    <span class="keyword">if</span> (!result)&#123;</span><br><span class="line">        result = hasIEPlugin(<span class="string">"QuickTime.QuickTime"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//检测Flash</span></span><br><span class="line">alert(hasFlash());</span><br><span class="line"><span class="comment">//检测QuickTime</span></span><br><span class="line">alert(hasQuickTime());</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>2、<strong>注册处理程序</strong></p>
+</blockquote>
+<ul>
+<li><p>Firefox/Chrome等浏览器为navigator对象新增了registerContentHandler()和registerProtocolHandler()方法。这两个方法可以让一个站点指明它可以处理特定类型的信息。</p>
+</li>
+<li><p><strong>registerContentHandler()</strong>方法接收三个参数：要处理的MIME类型、可以处理该MIME类型的页面的URL 以及应用程序的名称。</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将一个站点注册为处理RSS 源的处理程序</span></span><br><span class="line">navigator.registerContentHandler(<span class="string">"application/rss+xml"</span>,</span><br><span class="line"><span class="string">"http://www.somereader.com?feed=%s"</span>, <span class="string">"Some Reader"</span>);</span><br><span class="line"><span class="comment">/**第一个参数是RSS 源的MIME 类型。第二个参数是应该接收RSS 源URL 的URL，其中的%s 表示RSS 源URL，由浏览器自动插入,当下一次请求RSS源时，浏览器就会打开指定的URL，而相应的Web 应用程序将以适当方式来处理该请求**/</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>registerProtocolHandler()</strong>方法，它也接收三个参数：要处理的协议（例如，mailto 或ftp）、处理该协议的页面的URL 和应用程序的名称。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将一个应用程序注册为默认的邮件客户端</span></span><br><span class="line">navigator.registerProtocolHandler(<span class="string">"mailto"</span>,</span><br><span class="line"><span class="string">"http://www.somemailclient.com?cmd=%s"</span>, <span class="string">"Some Mail Client"</span>);</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">注册了一个mailto 协议的处理程序，该程序指向一个基于Web 的电子邮件客户端。同样，</span></span><br><span class="line"><span class="comment">第二个参数仍然是处理相应请求的URL，而%s 则表示原始的请求。</span></span><br><span class="line"><span class="comment">**/</span></span><br></pre></td></tr></table></figure>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2017年11月29日 16:30</p>
+        <p>原始链接： <a class="post-url" href="/shanruopeng.github.io/2017/11/30/javascript-BOM—navigator 对象/" title="javascript-BOM-navigator 对象">http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript-BOM—navigator 对象/</a></p>
+        <footer>
+            <a href="http://shanruopeng.github.io/shanruopeng.github.io">
+                <img src="/shanruopeng.github.io/images/logo.png" alt="Shanruo Peng">
+                Shanruo Peng
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript-BOM—navigator 对象/&title=《javascript-BOM-navigator 对象》 — Shanruo's Blog&pic=/images/img9.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript-BOM—navigator 对象/&title=《javascript-BOM-navigator 对象》 — Shanruo's Blog&source=不积跬步，无以至千里；不积小流，无以成江海。" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript-BOM—navigator 对象/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《javascript-BOM-navigator 对象》 — Shanruo's Blog&url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript-BOM—navigator 对象/&via=http://shanruopeng.github.io/shanruopeng.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript-BOM—navigator 对象/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://shanruopeng.github.io/shanruopeng.github.io/2017/11/30/javascript-BOM—navigator 对象/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" class="color2">javascript高级程序设计</a>
+      
+    <a href="/shanruopeng.github.io/tags/前端基础/" class="color5">前端基础</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/shanruopeng.github.io/2017/11/30/javascript-BOM—screen 对象 & history对象/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          javascript-screen对象 &amp; history对象
+        
+      </span>
+    </a>
+  
+  
+    <a href="/shanruopeng.github.io/2017/11/30/javascript-BOM - Window对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">javascript-BOM-Window对象</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 Shanruo Peng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://shanruopeng.github.io/shanruopeng.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 0
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/shanruopeng.github.io/categories/Photoshop/">Photoshop</a><a class="category-link" href="/shanruopeng.github.io/categories/javascript基础/">javascript基础</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/shanruopeng.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/archives">
+                    <i class="fa fa-archive"></i><span>归档</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/shanruopeng.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+            <li>
+                <a target="_blank" href="/shanruopeng.github.io/404.html">
+                    <i class="fa fa-heartbeat"></i><span>公益404</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/shanruopeng.github.io/tags/Photoshop学习笔记/" style="font-size: 10px;">Photoshop学习笔记</a> <a href="/shanruopeng.github.io/tags/javascript高级程序设计/" style="font-size: 20px;">javascript高级程序设计</a> <a href="/shanruopeng.github.io/tags/前端基础/" style="font-size: 20px;">前端基础</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/shanruopeng.github.io/js/search.js"></script>
+<script src="/shanruopeng.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/shanruopeng.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/shanruopeng.github.io/js/animate.js"></script>
+
+  </div>
+</body>
+</html>
